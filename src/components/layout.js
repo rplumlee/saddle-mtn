@@ -5,9 +5,6 @@ import { StaticQuery, graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import Image from 'gatsby-image'
 import { motion, useMotionValue, animate, useAnimation } from 'framer-motion'
-
-import cosmicjsLogo from '../../static/cosmicjs.svg'
-import gatsbyLogo from '../../static/gatsby.png'
 import { rhythm, scale } from '../utils/typography'
 
 // Import typefaces
