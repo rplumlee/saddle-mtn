@@ -1,7 +1,9 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import { Link } from 'gatsby'
 import { StaticQuery, graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
+import { motion, useMotionValue, animate, useAnimation } from 'framer-motion'
 
 import cosmicjsLogo from '../../static/cosmicjs.svg'
 import gatsbyLogo from '../../static/gatsby.png'
@@ -10,63 +12,119 @@ import { rhythm, scale } from '../utils/typography'
 // Import typefaces
 import 'typeface-montserrat'
 import 'typeface-merriweather'
+import 'typeface-lato'
 
-export default ({ children, location }) => (
-  <StaticQuery
-    query={graphql`
-      query LayoutQuery {
-        cosmicjsSettings(slug: { eq: "general" }) {
-          metadata {
-            site_heading
-            homepage_hero {
-              local {
-                childImageSharp {
-                  fluid(quality: 90, maxWidth: 1920) {
-                    ...GatsbyImageSharpFluid_withWebp
+export default function Layout({ children, location }) {
+  return (
+    <StaticQuery
+      query={graphql`
+        query LayoutQuery {
+          cosmicjsSettings(slug: { eq: "general" }) {
+            metadata {
+              site_heading
+              homepage_hero {
+                local {
+                  childImageSharp {
+                    fluid(quality: 90, maxWidth: 1920) {
+                      ...GatsbyImageSharpFluid_withWebp
+                    }
                   }
                 }
               }
             }
           }
         }
-      }
-    `}
-    render={data => {
-      const siteTitle = data.cosmicjsSettings.metadata.site_heading
-      const homgePageHero =
-        data.cosmicjsSettings.metadata.homepage_hero.local.childImageSharp.fluid
-      let header
+      `}
+      render={(data) => {
+        const bgHero = React.useRef(null)
+        React.useEffect(() => {
+          const bg = ReactDOM.findDOMNode(bgHero.current)
+          bg.classList.add('image-end')
+          bg.classList.remove('image-start')
+          console.log(bg.classList)
+        }, [])
+        const siteTitle = data.cosmicjsSettings.metadata.site_heading
+        const homgePageHero =
+          data.cosmicjsSettings.metadata.homepage_hero.local.childImageSharp
+            .fluid
+        let header
 
-      let rootPath = `/`
-      let postsPath = `/posts`
-      if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
-        rootPath = __PATH_PREFIX__ + `/`
-        postsPath = __PATH_PREFIX__ + `/posts`
-      }
+        let rootPath = `/`
+        let postsPath = `/posts`
+        if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
+          rootPath = __PATH_PREFIX__ + `/`
+          postsPath = __PATH_PREFIX__ + `/posts`
+        }
 
-      if (location.pathname === rootPath || location.pathname === postsPath) {
-        header = (
-          <BackgroundImage
-            Tag="div"
-            className="post-hero"
-            fluid={homgePageHero}
-            backgroundColor={`#007ACC`}
-            style={{
-              height: rhythm(14),
-              position: 'relative',
-              marginBottom: `${rhythm(1.5)}`,
-            }}
-          >
-            <h1
+        if (location.pathname === rootPath || location.pathname === postsPath) {
+          header = (
+            <BackgroundImage
+              Tag="div"
+              ref={bgHero}
+              className={`post-hero image-start`}
+              fluid={homgePageHero}
+              backgroundColor={`#007ACC`}
               style={{
-                ...scale(1.3),
-                position: 'absolute',
-                textAlign: 'center',
-                left: 0,
-                right: 0,
-                top: rhythm(4),
-                marginTop: '0',
-                height: rhythm(2.5),
+                height: '100vh',
+                position: 'relative',
+                marginBottom: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: '30s linear',
+              }}
+            >
+              <motion.h1
+                style={{
+                  ...scale(1.3),
+                  textAlign: 'center',
+                  color: '#fff',
+                  left: 0,
+                  right: 0,
+                  top: rhythm(4),
+                  marginTop: '0',
+                  height: rhythm(2.5),
+                  textTransform: 'uppercase',
+                  fontFamily: 'Lato, sans-serif',
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                }}
+                initial={{ opacity: 0 }}
+                transition={{
+                  ease: 'easeOut',
+                  duration: 1,
+                  staggerChildren: 0.5,
+                }}
+              >
+                Saddle Mountain Group
+                <br />{' '}
+                <motion.small
+                  style={{
+                    fontSize: '.5em',
+                    borderTop: '1px solid #fff',
+                    paddingTop: 15,
+                    paddingLeft: 40,
+                    paddingRight: 40,
+                  }}
+                >
+                  Coming Soon
+                </motion.small>
+              </motion.h1>
+            </BackgroundImage>
+          )
+        } else {
+          header = (
+            <h3
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                marginTop: 0,
+                marginBottom: rhythm(-1),
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                maxWidth: rhythm(24),
+                paddingTop: `${rhythm(1.5)}`,
               }}
             >
               <Link
@@ -79,96 +137,31 @@ export default ({ children, location }) => (
               >
                 {siteTitle}
               </Link>
-            </h1>
-          </BackgroundImage>
-        )
-      } else {
-        header = (
-          <h3
-            style={{
-              fontFamily: 'Montserrat, sans-serif',
-              marginTop: 0,
-              marginBottom: rhythm(-1),
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              maxWidth: rhythm(24),
-              paddingTop: `${rhythm(1.5)}`,
-            }}
-          >
-            <Link
+            </h3>
+          )
+        }
+        return (
+          <div>
+            {header}
+            <div
               style={{
-                boxShadow: 'none',
-                textDecoration: 'none',
-                color: 'inherit',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                maxWidth: rhythm(24),
+                padding: 0,
               }}
-              to={'/'}
             >
-              {siteTitle}
-            </Link>
-          </h3>
-        )
-      }
-      return (
-        <div>
-          {header}
-          <div
-            style={{
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              maxWidth: rhythm(24),
-              padding: `0 ${rhythm(3 / 4)} ${rhythm(1.5)} ${rhythm(3 / 4)}`,
-              minHeight: 'calc(100vh - 42px)',
-            }}
-          >
-            {children}
+              {children}
+            </div>
+            <footer
+              style={{
+                textAlign: 'center',
+                padding: 0,
+              }}
+            ></footer>
           </div>
-          <footer
-            style={{
-              textAlign: 'center',
-              padding: `0 20px 80px 0`,
-            }}
-          >
-            powered by&nbsp;
-            <a
-              target="_blank"
-              href="https://gatsbyjs.org"
-              style={{
-                color: '#191919',
-                boxShadow: 'none',
-              }}
-            >
-              <img
-                src={gatsbyLogo}
-                alt="Gatsby JS"
-                style={{
-                  width: '20px',
-                  margin: '0 4px -3px 2px',
-                }}
-              />
-              <strong>Gatsby</strong>
-            </a>
-            &nbsp;and&nbsp;
-            <a
-              target="_blank"
-              href="https://cosmicjs.com"
-              style={{
-                color: '#191919',
-                boxShadow: 'none',
-              }}
-            >
-              <img
-                src={cosmicjsLogo}
-                alt="Cosmic JS"
-                style={{
-                  width: '18px',
-                  margin: '0 4px -2px 5px',
-                }}
-              />
-              <strong>Cosmic JS</strong>
-            </a>
-          </footer>
-        </div>
-      )
-    }}
-  />
-)
+        )
+      }}
+    />
+  )
+}

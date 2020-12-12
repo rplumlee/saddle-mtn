@@ -1,0 +1,11 @@
+html {
+  overflow-y: auto;
+}
+.image-start,
+.image-start:before {
+  background-position: 0% center !important;
+}
+.image-end,
+.image-end:before {
+  background-position: 100% center !important;
+}
