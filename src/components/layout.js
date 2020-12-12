@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { Link } from 'gatsby'
 import { StaticQuery, graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
+import Image from 'gatsby-image'
 import { motion, useMotionValue, animate, useAnimation } from 'framer-motion'
 
 import cosmicjsLogo from '../../static/cosmicjs.svg'
