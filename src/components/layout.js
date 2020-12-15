@@ -23,7 +23,7 @@ export default function Layout({ children, location }) {
               homepage_hero {
                 local {
                   childImageSharp {
-                    fluid(quality: 90, maxWidth: 1920) {
+                    fluid(quality: 90, maxWidth: 5000) {
                       ...GatsbyImageSharpFluid_withWebp
                     }
                   }
@@ -34,13 +34,6 @@ export default function Layout({ children, location }) {
         }
       `}
       render={(data) => {
-        const bgHero = React.useRef(null)
-        React.useEffect(() => {
-          const bg = ReactDOM.findDOMNode(bgHero.current)
-          bg.classList.add('image-end')
-          bg.classList.remove('image-start')
-          console.log(bg.classList)
-        }, [])
         const siteTitle = data.cosmicjsSettings.metadata.site_heading
         const homgePageHero =
           data.cosmicjsSettings.metadata.homepage_hero.local.childImageSharp
@@ -58,18 +51,15 @@ export default function Layout({ children, location }) {
           header = (
             <BackgroundImage
               Tag="div"
-              ref={bgHero}
-              className={`post-hero image-start`}
+              className="post-hero"
               fluid={homgePageHero}
               backgroundColor={`#007ACC`}
               style={{
                 height: '100vh',
                 position: 'relative',
-                marginBottom: 0,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                transition: '30s linear',
               }}
             >
               <motion.h1
