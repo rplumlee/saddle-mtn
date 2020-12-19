@@ -164,7 +164,7 @@ export default function Layout({ children, location }) {
                       variants={c2variants}
                       animate={colorMode === 'light' ? 'light' : 'dark'}
                     />
-                    <g stroke-width="2">
+                    <g strokeWidth="2">
                       <motion.path
                         d="M 9 20 L 6 17"
                         variants={l1variants}
