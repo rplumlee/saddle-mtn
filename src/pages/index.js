@@ -4,9 +4,11 @@ import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import HomeHero from '../components/HomeHero'
 import { rhythm } from '../utils/typography'
-
+import BackgroundImage from 'gatsby-background-image'
 import '../styles.scss'
+import { useCycle } from 'framer-motion'
 
 class BlogIndex extends React.Component {
   render() {
@@ -20,6 +22,7 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={location}>
         <Helmet title={siteTitle} />
+        <HomeHero />
       </Layout>
     )
   }
