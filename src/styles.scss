@@ -24,7 +24,7 @@ header {
   position: relative;
   width: 100%;
   background: #212121;
-  padding: 0;
+  padding: 10px 0;
   z-index: 20;
   display: flex;
   justify-content: space-between;
@@ -38,12 +38,21 @@ header {
     padding-left: 20px;
     color: #fff;
     letter-spacing: 0.15rem;
+    opacity: 1;
+    display: flex;
+    align-items: center;
 
     @media (max-width: $screen-sm) {
       padding-left: 0;
       #logo-svg {
         width: 200px;
       }
+    }
+  }
+
+  &:hover {
+    #logo-svg {
+      opacity: 1;
     }
   }
 
@@ -106,9 +115,10 @@ header {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  transform: scaleX(1.3);
 }
 .hamRotate.active {
-  transform: rotate(45deg);
+  transform: rotate(45deg) scaleX(1);
 }
 .hamRotate180.active {
   transform: rotate(180deg);
@@ -281,10 +291,39 @@ Button {
     transition: 200ms;
   }
 }
+.theme-dark .theme-fill .fillTransparent,
+.theme-light .theme-fill .fillTransparent {
+  fill: transparent !important;
+}
 .transition {
   transition: 200ms;
 }
 
 #logo-svg {
-  width: 250px;
+  opacity: 0.5;
+  transition: 200ms;
+}
+
+.logo-text {
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: left;
+  line-height: 1.2rem;
+  letter-spacing: -0.02rem;
+  font-size: 1rem;
+
+  span {
+    display: inline-block;
+    &::first-letter {
+      font-size: 1.3rem;
+    }
+  }
+  p {
+    font-size: 0.6rem;
+    margin: 3px 0 0 0;
+    line-height: 1rem;
+    letter-spacing: 0.15rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+  }
 }
