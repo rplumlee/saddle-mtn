@@ -170,7 +170,7 @@ export default function Layout({ children, location }) {
                       cx="10"
                       cy="10"
                       r="8"
-                      transition={{ duration: 0.19, type: 'linear' }}
+                      transition={{ duration: 0.19 }}
                       fill={colorMode === 'light' ? '#212121' : '#fff'}
                       variants={c1variants}
                       animate={colorMode === 'light' ? 'light' : 'dark'}
@@ -179,7 +179,7 @@ export default function Layout({ children, location }) {
                       cx="14"
                       cy="6"
                       r="8"
-                      transition={{ duration: 0.19, type: 'linear' }}
+                      transition={{ duration: 0.19 }}
                       fill={colorMode === 'light' ? '#fff' : '#212121'}
                       variants={c2variants}
                       animate={colorMode === 'light' ? 'light' : 'dark'}
@@ -227,8 +227,6 @@ export default function Layout({ children, location }) {
                 </>
               ) : (
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
                   className="theme-bg-secondary"
                   style={{
                     margin: '0px auto',
@@ -242,16 +240,19 @@ export default function Layout({ children, location }) {
                     paddingBottom: 200,
                   }}
                 >
-                  <h1
-                    style={{
-                      marginTop: 0,
-                      fontFamily: 'Montserrat',
-                      fontWeight: 700,
-                    }}
+                  <motion.div
+                    initial={{ y: 100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
                   >
-                    Coming Soon
-                  </h1>
-                  <label style={{ width: 400, margin: '0 auto' }}>
+                    <h1
+                      style={{
+                        marginTop: 0,
+                        fontFamily: 'Montserrat',
+                        fontWeight: 700,
+                      }}
+                    >
+                      Coming Soon
+                    </h1>
                     <TextField
                       id="pass"
                       label="Password"
@@ -260,7 +261,7 @@ export default function Layout({ children, location }) {
                       style={{ width: 400 }}
                       onChange={(e) => checkPW(e)}
                     />
-                  </label>
+                  </motion.div>
                 </motion.div>
               )}
             </div>
