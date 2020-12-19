@@ -64,17 +64,26 @@ const c2variants = {
   dark: { fill: '#212121', scale: 1, x: 0, y: 0 },
   light: { fill: '#212121', scale: [1, 1.1, 1, 1], x: -4, y: 12 },
 }
+const l4variants = {
+  dark: { stroke: 'transparent', x: 0, y: 0 },
+  light: { stroke: '#212121', x: -8, y: -2, transition: { delay: 0.2 } },
+}
 const l1variants = {
   dark: { stroke: 'transparent', x: 0, y: 0 },
-  light: { stroke: '#212121', x: -6, y: -10, transition: { delay: 0.2 } },
+  light: { stroke: '#212121', x: -5, y: -10, transition: { delay: 0.4 } },
 }
 const l2variants = {
   dark: { stroke: 'transparent', x: 0, y: 0 },
-  light: { stroke: '#212121', x: 0, y: -12, transition: { delay: 0.4 } },
+  light: { stroke: '#212121', x: 0, y: -11, transition: { delay: 0.6 } },
 }
 const l3variants = {
   dark: { stroke: 'transparent', x: 0, y: 0 },
-  light: { stroke: '#212121', x: 6, y: -10, transition: { delay: 0.6 } },
+  light: { stroke: '#212121', x: 5, y: -10, transition: { delay: 0.8 } },
+}
+
+const l5variants = {
+  dark: { stroke: 'transparent', x: 0, y: 0 },
+  light: { stroke: '#212121', x: 8, y: -2, transition: { delay: 1 } },
 }
 export const ThemeContext = React.createContext()
 
@@ -162,12 +171,12 @@ export default function Layout({ children, location }) {
                 >
                   <motion.svg
                     height="20"
-                    width="20"
+                    width="29"
                     className="darkToggle"
                     style={{ overflow: 'hidden' }}
                   >
                     <motion.circle
-                      cx="10"
+                      cx="15"
                       cy="10"
                       r="8"
                       transition={{ duration: 0.19 }}
@@ -176,7 +185,7 @@ export default function Layout({ children, location }) {
                       animate={colorMode === 'light' ? 'light' : 'dark'}
                     />
                     <motion.circle
-                      cx="14"
+                      cx="19"
                       cy="6"
                       r="8"
                       transition={{ duration: 0.19 }}
@@ -186,20 +195,32 @@ export default function Layout({ children, location }) {
                     />
                     <g strokeWidth="2">
                       <motion.path
-                        d="M 9 20 L 6 17"
+                        d="M 14 18 L 10 18"
+                        variants={l4variants}
+                        stroke={colorMode === 'light' ? '#212121' : '#fff'}
+                        animate={colorMode === 'light' ? 'light' : 'dark'}
+                      />
+                      <motion.path
+                        d="M 14 21 L 11 18"
                         variants={l1variants}
                         stroke={colorMode === 'light' ? '#212121' : '#fff'}
                         animate={colorMode === 'light' ? 'light' : 'dark'}
                       />
                       <motion.path
-                        d="M 10 20 L 10 15"
+                        d="M 15 20 L 15 15"
                         variants={l2variants}
                         stroke={colorMode === 'light' ? '#212121' : '#fff'}
                         animate={colorMode === 'light' ? 'light' : 'dark'}
                       />
                       <motion.path
-                        d="M 11 20 L 14 17"
+                        d="M 16 21 L 19 18"
                         variants={l3variants}
+                        stroke={colorMode === 'light' ? '#212121' : '#fff'}
+                        animate={colorMode === 'light' ? 'light' : 'dark'}
+                      />
+                      <motion.path
+                        d="M 16 18 L 20 18"
+                        variants={l5variants}
                         stroke={colorMode === 'light' ? '#212121' : '#fff'}
                         animate={colorMode === 'light' ? 'light' : 'dark'}
                       />
