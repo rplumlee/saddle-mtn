@@ -7,7 +7,7 @@ function Logo() {
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0, 0, 400,266.6666666666667"
-      style={{ marginBottom: -20 }}
+      style={{ marginBottom: -35, marginTop: -15 }}
     >
       <g id="svgg" className="theme-fill">
         <path

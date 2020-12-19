@@ -6,7 +6,6 @@ a {
   box-shadow: none;
 }
 body {
-  padding-bottom: 3000px;
 }
 .image-start,
 .image-start:before {
@@ -123,9 +122,17 @@ Button {
   color: #fff;
   transition: 200ms;
 
-  .theme-text {
+  .theme-text,
+  .theme-text label,
+  .theme-text input {
     color: #fff !important;
     transition: 200ms;
+  }
+  .theme-text .MuiInput-underline:before {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+  }
+  .theme-text .MuiInput-underline:hover:not(.Mui-disabled):before {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.87);
   }
   .theme-fill path {
     fill: #fff !important;
@@ -135,22 +142,33 @@ Button {
     background: #212121 !important;
     transition: 200ms;
   }
+  .theme-bg-secondary {
+    background: #151515 !important;
+    transition: 200ms;
+  }
 }
 .theme-light {
   background: #fff;
   color: #212121;
   transition: 200ms;
 
-  .theme-text {
+  .theme-text,
+  .theme-text label,
+  .theme-text input {
     color: #212121 !important;
     transition: 200ms;
   }
+
   .theme-fill path {
     fill: #212121 !important;
     transition: 200ms;
   }
   .theme-bg {
     background: #fff !important;
+    transition: 200ms;
+  }
+  .theme-bg-secondary {
+    background: #f1f1f1 !important;
     transition: 200ms;
   }
 }

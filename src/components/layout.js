@@ -12,9 +12,13 @@ import {
   useAnimation,
   useCycle,
 } from 'framer-motion'
+import { useLocalStorageState } from '../hooks/useLocalStorage'
 import { rhythm, scale } from '../utils/typography'
 import { useSpring, animated } from 'react-spring'
 import { RiMoonClearFill } from 'react-icons/ri'
+
+import TextField from '@material-ui/core/TextField'
+import { makeStyles } from '@material-ui/core/styles'
 
 import useBoop from '../hooks/useboop'
 
@@ -22,6 +26,15 @@ import useBoop from '../hooks/useboop'
 import 'typeface-montserrat'
 import 'typeface-merriweather'
 import 'typeface-lato'
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
+  },
+}))
 
 const Boop = ({ children, ...boopConfig }) => {
   const [style, trigger] = useBoop({ rotation: 10 })
@@ -99,6 +112,13 @@ export default function Layout({ children, location }) {
           postsPath = __PATH_PREFIX__ + `/posts`
         }
         const [colorMode, toggleColorMode] = useCycle('dark', 'light')
+        const [allowed, setAllowed] = useLocalStorageState('SMG_DEV')
+
+        const checkPW = (e) => {
+          if (e.target.value === 'bingo!') {
+            setAllowed('bingo!')
+          }
+        }
 
         header = (
           <header className={`theme-${colorMode}`}>
@@ -194,13 +214,56 @@ export default function Layout({ children, location }) {
         return (
           <ThemeContext.Provider value={{ colorMode }}>
             {header}
-            <div className={`theme-${colorMode}`}>{children}</div>
-            <footer
-              style={{
-                textAlign: 'center',
-                padding: 0,
-              }}
-            ></footer>
+            <div className={`theme-${colorMode}`}>
+              {allowed === 'bingo!' ? (
+                <>
+                  <div className={`theme-${colorMode}`}>{children}</div>
+                  <footer
+                    style={{
+                      textAlign: 'center',
+                      padding: 0,
+                    }}
+                  ></footer>
+                </>
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="theme-bg-secondary"
+                  style={{
+                    margin: '0px auto',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100vh',
+                    position: 'fixed',
+                    width: '100%',
+                    paddingBottom: 200,
+                  }}
+                >
+                  <h1
+                    style={{
+                      marginTop: 0,
+                      fontFamily: 'Montserrat',
+                      fontWeight: 700,
+                    }}
+                  >
+                    Coming Soon
+                  </h1>
+                  <label style={{ width: 400, margin: '0 auto' }}>
+                    <TextField
+                      id="pass"
+                      label="Password"
+                      defaultValue=""
+                      className="theme-text"
+                      style={{ width: 400 }}
+                      onChange={(e) => checkPW(e)}
+                    />
+                  </label>
+                </motion.div>
+              )}
+            </div>
           </ThemeContext.Provider>
         )
       }}
