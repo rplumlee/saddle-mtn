@@ -64,21 +64,21 @@ export default function HomeHero({ children, location }) {
               fluid={homgePageHero}
               backgroundColor={`#007ACC`}
               style={{
-                paddingBottom: 50,
-                height: '92vh',
+                paddingBottom: 150,
+                height: '85vh',
                 position: 'relative',
                 display: 'flex',
-                alignItems: 'flex-start',
                 justifyContent: 'center',
                 flexDirection: 'column',
                 maxHeight: 1000,
+                backgroundPosition: '0% 100%',
               }}
             >
               <div className="home-hero-overlay"></div>
               <motion.h1
                 style={{
                   ...scale(1.1),
-                  textAlign: 'left',
+                  textAlign: 'center',
                   color: '#fff',
                   left: 0,
                   right: 0,
@@ -102,7 +102,7 @@ export default function HomeHero({ children, location }) {
                   staggerChildren: 0.5,
                 }}
               >
-                Step up your sales game
+                Transform your business
                 <motion.small
                   variants={variants}
                   style={{
@@ -110,13 +110,13 @@ export default function HomeHero({ children, location }) {
                     display: 'block',
                     textTransform: 'none',
                     fontWeight: '500',
-                    maxWidth: 800,
+                    maxWidth: 700,
                     lineHeight: '1.25rem',
-                    marginTop: 15,
+                    margin: '15px auto 0 auto',
                   }}
                 >
-                  Take your organization to the next level with 40 years of
-                  industry leading, data driven knowledge.
+                  Take your sales organization to the next level with 40 years
+                  of industry leading, data driven knowledge.
                   <motion.div variants={variants}>
                     <Button
                       href="#"
@@ -138,15 +138,6 @@ export default function HomeHero({ children, location }) {
                 </motion.small>
               </motion.h1>
             </BackgroundImage>
-            <div className={`wave theme-bg`}></div>
-            <svg>
-              <clipPath id="wave" clipPathUnits="objectBoundingBox">
-                <path
-                  className="st0"
-                  d="M1,0c0,0-0.3,0.1-0.5,0.1S0.3,0,0,0.1V1h1L1,0z"
-                />
-              </clipPath>
-            </svg>
           </>
         )
       }}
