@@ -33,7 +33,7 @@ export default function HomePhilosophy() {
   return (
     <>
       <div className={`wave theme-bg philosophy`}>
-        <div className="container">
+        <motion.div className="container">
           <h2>A Unique Approach</h2>
           <p>
             The Saddle Mountain Group is a consulting organization that
@@ -61,7 +61,7 @@ export default function HomePhilosophy() {
               <p>Metrics and KPIs</p>
             </motion.li>
           </motion.ul>
-        </div>
+        </motion.div>
       </div>
       <svg>
         <clipPath id="wave" clipPathUnits="objectBoundingBox">
