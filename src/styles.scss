@@ -241,7 +241,7 @@ h2 {
   margin-top: -150px;
   padding-top: 150px;
   background: #212121;
-  min-height: 800px;
+  padding-bottom: 80px;
   clip-path: url(#wave);
 }
 Button {
@@ -355,24 +355,120 @@ Button {
     border-top: 2px solid rgba(123, 123, 123, 0.8);
   }
 }
+.message {
+  padding-bottom: 300px;
 
+  ol {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 90%;
+    margin: 40px auto;
+    padding-left: 40px;
+
+    li {
+      &::marker {
+        font-size: 70px;
+        color: rgba(255, 255, 255, 0.2);
+        font-weight: bold;
+      }
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.5);
+      margin-bottom: 0;
+      border-radius: 10px;
+      font-weight: bold;
+      height: 140px;
+      width: 300px;
+      margin: 0 auto 40px auto;
+      position: relative;
+      padding: 0 20px;
+
+      span {
+        position: absolute;
+        font-size: 90px;
+        line-height: 90px;
+        opacity: 0.15;
+        right: 5px;
+        bottom: 0;
+      }
+
+      svg {
+        position: absolute;
+        right: -99%;
+        top: 60px;
+        transform: scaleY(1.5);
+        z-index: -1;
+
+        &.back {
+          right: auto;
+          left: -95%;
+          trasnform: rotateY(180deg);
+        }
+      }
+      svg,
+      svg path {
+        transform-origin: (left top);
+      }
+
+      &:nth-of-type(2n) {
+        //align-self: flex-end;
+      }
+    }
+  }
+}
 .philosophy ul {
   list-style-type: none;
   margin-top: 3rem;
   display: flex;
-  max-width: 800px;
   padding-right: 30px;
   justify-content: space-between;
+  width: 100%;
 
   li {
     display: inline-block;
     font-size: 80px;
-    line-height: 3rem;
-    text-align: center;
+    line-height: 4rem;
+    text-align: left;
+    padding-right: 30px;
+
+    &::marker {
+      font-size: 40px;
+      opacity: 0.3;
+    }
     p {
       font-size: 1rem;
-      margin-top: 0;
+      margin-top: 1rem;
       font-weight: 600;
+      text-align: left;
+      line-height: 1.4rem;
     }
+  }
+}
+
+.icon-spin {
+  -webkit-animation: icon-spin 60s infinite linear;
+  animation: icon-spin 60s infinite linear;
+}
+
+@-webkit-keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
   }
 }

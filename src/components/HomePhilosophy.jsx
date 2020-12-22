@@ -50,15 +50,24 @@ export default function HomePhilosophy() {
           >
             <motion.li variants={variants}>
               <GiAtom style={{ fill: 'url(#gradient)' }} />
-              <p>Core Value Message</p>
+              <p>
+                Optimizing your <br />
+                Core Value Message
+              </p>
             </motion.li>
             <motion.li variants={variants}>
               <GiHighKick style={{ fill: 'url(#gradient)' }} />
-              <p>World Class Team</p>
+              <p>
+                Building a <br />
+                World Class Team
+              </p>
             </motion.li>
             <motion.li variants={variants}>
               <GiChart style={{ fill: 'url(#gradient)' }} />
-              <p>Metrics and KPIs</p>
+              <p>
+                Auditing <br />
+                Metrics and KPIs
+              </p>
             </motion.li>
           </motion.ul>
         </motion.div>

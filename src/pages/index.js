@@ -6,6 +6,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import HomeHero from '../components/HomeHero'
 import HomePhilosophy from '../components/HomePhilosophy'
+import HomeMessage from '../components/HomeMessage'
 import { rhythm } from '../utils/typography'
 import BackgroundImage from 'gatsby-background-image'
 import '../styles.scss'
@@ -25,6 +26,7 @@ class BlogIndex extends React.Component {
         <Helmet title={siteTitle} />
         <HomeHero />
         <HomePhilosophy />
+        <HomeMessage />
       </Layout>
     )
   }
