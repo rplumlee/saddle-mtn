@@ -23,7 +23,6 @@ const clip_path_variants = {
     pathLength: 1,
     transition: {
       duration: 0.4,
-      delay: 0.4,
     },
   },
   closed: {
@@ -31,9 +30,9 @@ const clip_path_variants = {
   },
 }
 export default function HomeMessage() {
-  const [ref, inView, entry] = useInView({ threshold: 0.1 })
-  const [ref1, inView1, entry1] = useInView({ threshold: 0.1 })
-  const [ref2, inView2, entry2] = useInView({ threshold: 0.1 })
+  const [ref, inView, entry] = useInView({ threshold: 1 })
+  const [ref1, inView1, entry1] = useInView({ threshold: 1 })
+  const [ref2, inView2, entry2] = useInView({ threshold: 1 })
 
   const animation = useAnimation()
   const animation1 = useAnimation()
@@ -42,24 +41,18 @@ export default function HomeMessage() {
   React.useEffect(() => {
     if (inView) {
       animation.start('open')
-    } else {
-      animation.start('closed')
     }
   }, [animation, inView])
 
   React.useEffect(() => {
     if (inView1) {
       animation1.start('open')
-    } else {
-      animation1.start('closed')
     }
   }, [animation1, inView1])
 
   React.useEffect(() => {
     if (inView2) {
       animation2.start('open')
-    } else {
-      animation2.start('closed')
     }
   }, [animation2, inView2])
 
@@ -99,13 +92,14 @@ export default function HomeMessage() {
             core messaging can be conveyed to your sales organization through an
             effective toolset.
           </p>
-          <div>
+
+          <div className="messaging-layout">
             <ol>
               <li className="theme-bg">
                 <span>1</span>Evaluate &amp; Assess Current Value Message
                 <svg ref={ref} stroke-width="3">
                   <motion.path
-                    d="M 00 20 C 70 120 70 0 0 110"
+                    d="M 0 40 C 80 130 60 10 0 100 L 10 100 L 0 90 L 0 100"
                     fill="none"
                     stroke="url(#gradient)"
                     variants={clip_path_variants}
@@ -118,7 +112,7 @@ export default function HomeMessage() {
                 <span>2</span>Recraft &amp; Refine Value Messaging
                 <svg ref={ref1} stroke-width="3">
                   <motion.path
-                    d="M 00 20 C 70 120 70 0 0 110"
+                    d="M 0 40 C 80 130 60 10 0 100 L 10 100 L 0 90 L 0 100"
                     fill="none"
                     stroke="url(#gradient)"
                     variants={clip_path_variants}
@@ -131,7 +125,7 @@ export default function HomeMessage() {
                 <span>3</span>Deploy to Sales Org.
                 <svg ref={ref2} stroke-width="3">
                   <motion.path
-                    d="M 00 20 C 70 120 70 0 0 110"
+                    d="M 0 40 C 80 130 60 10 0 100 L 10 100 L 0 90 L 0 100"
                     fill="none"
                     stroke="url(#gradient)"
                     variants={clip_path_variants}
@@ -144,6 +138,30 @@ export default function HomeMessage() {
                 <span>4</span>Measure &amp; Validate Effectiveness
               </li>
             </ol>
+            <div>
+              <h3>
+                Saddle Mountain Group – value messaging questions we will
+                explore with you:
+              </h3>
+              <ul>
+                <li>
+                  Is your value messaging aligned with your solution’s core
+                  benefits?
+                </li>
+                <li>
+                  Is your value messaging clear, compelling and clearly
+                  differentiated from the competition?
+                </li>
+                <li>
+                  Does your sales organization have the tools and training to
+                  effectively convey the message?
+                </li>
+                <li>
+                  Do you have any validation mechanisms in place to ensure your
+                  message is effective in winning new customers?
+                </li>
+              </ul>
+            </div>
           </div>
         </motion.div>
       </div>

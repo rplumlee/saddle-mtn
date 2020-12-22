@@ -239,9 +239,9 @@ h2 {
 }
 .wave {
   margin-top: -150px;
-  padding-top: 150px;
+  padding-top: 120px;
   background: #212121;
-  padding-bottom: 80px;
+  padding-bottom: 0px;
   clip-path: url(#wave);
 }
 Button {
@@ -357,14 +357,15 @@ Button {
 }
 .message {
   padding-bottom: 300px;
+  width: 100%;
+  padding-top: 150px;
 
   ol {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    width: 90%;
+
     margin: 40px auto;
-    padding-left: 40px;
 
     li {
       &::marker {
@@ -395,7 +396,7 @@ Button {
 
       svg {
         position: absolute;
-        left: 299px;
+        left: 310px;
         top: 60px;
         transform: scaleY(1.5);
         z-index: -1;
@@ -471,4 +472,19 @@ Button {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
+}
+
+.messaging-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > div {
+    padding-left: 120px;
+  }
+}
+
+h3 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
 }

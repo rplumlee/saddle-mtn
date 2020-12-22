@@ -65,7 +65,7 @@ export default function HomeHero({ children, location }) {
               backgroundColor={`#007ACC`}
               style={{
                 paddingBottom: 150,
-                height: '69vh',
+                height: '75vh',
                 position: 'relative',
                 display: 'flex',
                 justifyContent: 'center',

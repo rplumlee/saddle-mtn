@@ -25,8 +25,6 @@ export default function HomePhilosophy() {
   React.useEffect(() => {
     if (inView) {
       animation.start('visible')
-    } else {
-      animation.start('hidden')
     }
   }, [animation, inView])
 
