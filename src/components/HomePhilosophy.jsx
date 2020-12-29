@@ -1,8 +1,12 @@
 import React from 'react'
-import { motion, useAnimation } from 'framer-motion'
+import { motion, useAnimation, useViewportScroll } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import HomeMessage from './HomeMessage'
+import HomeMetrics from './HomeMetrics'
+import HomeTeam from './HomeTeam'
 import { GiAtom, GiHighKick, GiChart } from 'react-icons/gi'
+import { BsPeopleCircle, BsPieChart, BsShieldShaded } from 'react-icons/bs'
+import { FaChartPie } from 'react-icons/fa'
 import useBoop from '../hooks/useboop'
 import { useSpring, animated } from 'react-spring'
 import AppBar from '@material-ui/core/AppBar'
@@ -11,6 +15,7 @@ import Tab from '@material-ui/core/Tab'
 import Paper from '@material-ui/core/Paper'
 import Box from '@material-ui/core/Box'
 import { makeStyles } from '@material-ui/core/styles'
+import Fade from '@material-ui/core/Fade'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,16 +27,28 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   tabs: {
-    borderBottom: `1px solid rgba(122,122,122,.3)`,
     display: 'inline-flex',
     padding: '0px',
     minWidth: 800,
+    width: '100%',
   },
   tab: {
     fontWeight: '700',
     width: '33%',
   },
 }))
+
+const variants = {
+  hide: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+    },
+  },
+}
 function TabPanel(props) {
   const { children, value, index, ...other } = props
 
@@ -50,10 +67,15 @@ function TabPanel(props) {
 
 export default function HomePhilosophy() {
   const [ref, inView, entry] = useInView({ threshold: 0.1 })
-  const animation = useAnimation()
   const [selected, setSelected] = React.useState(0)
+  const [stickyNav, setStickyNav] = React.useState(false)
+  const stickyRef = React.useRef(null)
   const classes = useStyles()
+  const animation = useAnimation()
+  const { scrollY } = useViewportScroll()
+
   const handleChange = (event, newValue) => {
+    event.preventDefault()
     setSelected(newValue)
   }
 
@@ -63,14 +85,28 @@ export default function HomePhilosophy() {
     }
   }, [animation, inView])
 
+  React.useEffect(() => {
+    const viewportOffset = stickyRef.current.getBoundingClientRect()
+    const bodyOffset = document.body.getBoundingClientRect()
+    scrollY.onChange(() => {
+      console.log(viewportOffset.top - bodyOffset.top)
+      if (scrollY.get() > viewportOffset.top - bodyOffset.top) {
+        setStickyNav(true)
+      }
+      if (scrollY.get() <= viewportOffset.top - bodyOffset.top) {
+        setStickyNav(false)
+      }
+    })
+  }, [])
+
   return (
     <div className={`theme-bg-secondary`}>
       <div className={`theme-bg-secondary philosophy`}>
-        <motion.div className="">
+        <motion.div style={{ position: 'relative' }}>
           <p
             style={{
               maxWidth: 600,
-              margin: '80px auto',
+              margin: '50px auto',
               textAlign: 'center',
               fontWeight: '600',
             }}
@@ -79,44 +115,76 @@ export default function HomePhilosophy() {
             offering our own unique framework for sales excellence built on 3
             cornerstones:
           </p>
+          <div className="slant2 theme-bg-tertiary"></div>
+          <div className="slant theme-bg"></div>
 
-          <div>
-            <div className={classes.root}>
+          <div ref={stickyRef}>
+            <div
+              className={
+                stickyNav ? `${classes.root} stickyN` : `${classes.root}`
+              }
+            >
               <Tabs
                 centered
                 value={selected}
                 onChange={handleChange}
                 aria-label="scrollable prevent tabs example"
-                className={`${classes.tabs} `}
+                className={
+                  stickyNav
+                    ? `${classes.tabs} stickyNav theme-bg-secondary`
+                    : `${classes.tabs}`
+                }
               >
                 <Tab
                   label="Core Value Message"
-                  icon={<GiAtom style={{ fontSize: 38 }} />}
+                  icon={
+                    <BsShieldShaded style={{ fontSize: 33, lineHeight: 55 }} />
+                  }
                   aria-label="phone"
                   className={`${classes.tab}`}
                 />
                 <Tab
                   label="World Class Team"
-                  icon={<GiHighKick style={{ fontSize: 38 }} />}
+                  icon={
+                    <BsPeopleCircle style={{ fontSize: 33, lineHeight: 55 }} />
+                  }
                   aria-label="favorite"
                   className={`${classes.tab}`}
                 />
                 <Tab
                   label="Metrics & KPIs"
-                  icon={<GiChart style={{ fontSize: 38 }} />}
+                  icon={<FaChartPie style={{ fontSize: 33, lineHeight: 55 }} />}
                   aria-label="person"
                   className={`${classes.tab}`}
                 />
               </Tabs>
 
               <TabPanel value={selected} index={0}>
-                <HomeMessage />
+                <motion.div
+                  initial={`hide`}
+                  animate={selected == 0 ? 'show' : 'hide'}
+                  variants={variants}
+                >
+                  <HomeMessage />
+                </motion.div>
               </TabPanel>
               <TabPanel value={selected} index={1}>
-                Item Two
+                <motion.div
+                  initial={`hide`}
+                  animate={selected == 1 ? 'show' : 'hide'}
+                  variants={variants}
+                >
+                  <HomeTeam />
+                </motion.div>
               </TabPanel>
               <TabPanel value={selected} index={2}>
-                Item Three
+                <motion.div
+                  initial={`hide`}
+                  animate={selected == 2 ? 'show' : 'hide'}
+                  variants={variants}
+                >
+                  <HomeMetrics />
+                </motion.div>
               </TabPanel>
             </div>
           </div>

@@ -82,8 +82,7 @@ export default function HomeParticles({ children, location }) {
             margin: 0,
           }}
         >
-          We help companies build world class sales initiatives and penetrate
-          markets.
+          We help companies build world class sales initiatives.
         </p>
         <div
           style={{

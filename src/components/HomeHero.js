@@ -64,8 +64,9 @@ export default function HomeHero({ children, location }) {
               fluid={homgePageHero}
               backgroundColor={`#007ACC`}
               style={{
-                paddingBottom: 150,
-                height: '75vh',
+                paddingBottom: 0,
+                height: '45vw',
+                minHeight: 500,
                 position: 'relative',
                 display: 'flex',
                 justifyContent: 'center',
@@ -73,9 +74,7 @@ export default function HomeHero({ children, location }) {
                 maxHeight: 1000,
                 backgroundPosition: '0% 100%',
               }}
-            >
-              <div className="home-hero-overlay"></div>
-            </BackgroundImage>
+            ></BackgroundImage>
           </>
         )
       }}

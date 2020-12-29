@@ -12,8 +12,8 @@
   }
 }
 .infographic-container {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 80%, 0 60%);
-  clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 80%, 0 60%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 81%, 0 60%);
+  clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 81%, 0 60%);
   z-index: 5;
   margin-bottom: -24%;
   padding-bottom: 100px;
@@ -22,8 +22,8 @@
   min-height: 90vh;
 }
 .infolayer {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 77%, 0 61%);
-  clip-path: polygon(0 0, 100% 0, 100% 77%, 0 61%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 61%, 50% 71%, 0 61%);
+  clip-path: polygon(0 0, 100% 0, 100% 61%, 50% 71%, 0 61%);
   z-index: 3;
   padding-bottom: 4%;
   position: absolute;
@@ -37,7 +37,7 @@
   height: 35vh;
   padding: 0;
   opacity: 0.1;
-  margin: -450px auto 0 auto;
+  margin: -67vh auto 0 auto;
   width: auto;
   z-index: 1;
   position: relative;

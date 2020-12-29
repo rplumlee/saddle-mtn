@@ -29,7 +29,7 @@ const clip_path_variants = {
     pathLength: 0,
   },
 }
-export default function HomeMessage() {
+export default function HomeMetrics() {
   const [ref, inView, entry] = useInView({ threshold: 1 })
   const [ref1, inView1, entry1] = useInView({ threshold: 1 })
   const [ref2, inView2, entry2] = useInView({ threshold: 1 })
@@ -58,8 +58,19 @@ export default function HomeMessage() {
 
   return (
     <div className={`message`}>
+      <GiAtom
+        className="icon-spin"
+        style={{
+          fill: 'url(#gradient)',
+          fontSize: 280,
+          position: 'absolute',
+          right: -50,
+          zIndex: 1,
+          opacity: 0.3,
+        }}
+      />
       <motion.div className="">
-        <h2>Core Value Message</h2>
+        <h2>Metrics and KPI's</h2>
         <p>
           You can’t arm &amp; aim your sales organization without having a clear
           and effective core value proposition that differentiates your solution
@@ -84,7 +95,7 @@ export default function HomeMessage() {
               <div className="card theme-bg">
                 <span>1</span>Evaluate &amp; Assess Current Value Message
               </div>
-              <div className="shape theme-bg-secondary"></div>
+              <div className="shape theme-bg-tertiary"></div>
               <svg ref={ref} strokeWidth="3">
                 <motion.path
                   d="M 0 40 C 80 130 60 10 0 100 L 10 100 L 0 90 L 0 100"
@@ -100,7 +111,7 @@ export default function HomeMessage() {
               <div className="card theme-bg">
                 <span>2</span>Recraft &amp; Refine Value Messaging
               </div>
-              <div className="shape theme-bg-secondary"></div>
+              <div className="shape theme-bg-tertiary"></div>
               <svg ref={ref1} strokeWidth="3">
                 <motion.path
                   d="M 0 40 C 80 130 60 10 0 100 L 10 100 L 0 90 L 0 100"
@@ -116,7 +127,7 @@ export default function HomeMessage() {
               <div className="card theme-bg">
                 <span>3</span>Deploy to Sales Org.
               </div>
-              <div className="shape theme-bg-secondary"></div>
+              <div className="shape theme-bg-tertiary"></div>
               <svg ref={ref2} strokeWidth="3">
                 <motion.path
                   d="M 0 40 C 80 130 60 10 0 100 L 10 100 L 0 90 L 0 100"
@@ -129,14 +140,17 @@ export default function HomeMessage() {
               </svg>
             </li>
             <li>
-              <div className="shape theme-bg-secondary"></div>
+              <div className="shape theme-bg-tertiary"></div>
               <div className="card theme-bg">
                 <span>4</span>Measure &amp; Validate Effectiveness
               </div>
             </li>
           </ol>
           <div>
-            <h3>Questions we ask our clients:</h3>
+            <h3>
+              Saddle Mountain Group – value messaging questions we will explore
+              with you:
+            </h3>
             <ul>
               <li>
                 Is your value messaging aligned with your solution’s core
