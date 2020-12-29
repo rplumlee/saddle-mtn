@@ -59,11 +59,11 @@ export default function HomeAbout() {
   return (
     <div style={{ position: 'relative' }}>
       <div className="shape3 theme-bg-tertiary"></div>
-      <div className="shape2 theme-bg-secondary"></div>
+      <div className="shape2 theme-bg"></div>
 
-      <div className="home-about theme-bg" id="leadership">
+      <div className="home-about theme-bg-secondary" id="leadership">
         <div
-          className="infographic-container theme-bg theme-text"
+          className="infographic-container theme-text"
           style={{ clipPath: 'none' }}
         >
           <div className="container" style={{}}>
@@ -87,7 +87,10 @@ export default function HomeAbout() {
               Trimble Corporation in 2018.
             </p>
           </div>
-          <div className="theme-text home-infographic">
+          <div
+            className="theme-text home-infographic"
+            style={{ height: '150%' }}
+          >
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"

@@ -68,7 +68,7 @@ function TabPanel(props) {
 
 export default function HomePhilosophy() {
   const [ref, inView, entry] = useInView({ threshold: 0.1 })
-  const [selected, setSelected] = React.useState(false)
+  const [selected, setSelected] = React.useState(0)
   const [stickyNav, setStickyNav] = React.useState(false)
   const stickyRef = React.useRef(null)
   const classes = useStyles()
@@ -86,18 +86,23 @@ export default function HomePhilosophy() {
     }
   }, [animation, inView])
 
-  React.useEffect(() => {
+  const onChange = React.useCallback(() => {
     const viewportOffset = stickyRef.current.getBoundingClientRect()
     const bodyOffset = document.body.getBoundingClientRect()
-    scrollY.onChange(() => {
-      if (scrollY.get() >= viewportOffset.top - bodyOffset.top) {
-        setStickyNav(true)
-      }
-      if (scrollY.get() < viewportOffset.top - bodyOffset.top) {
-        setStickyNav(false)
-      }
-    })
-  }, [])
+    if (
+      scrollY.get() >= viewportOffset.top - bodyOffset.top &&
+      selected != false
+    ) {
+      setStickyNav(true)
+    }
+    if (scrollY.get() < viewportOffset.top - bodyOffset.top) {
+      setStickyNav(false)
+    }
+  }, [selected])
+
+  React.useEffect(() => {
+    scrollY.onChange(onChange)
+  }, [onChange])
 
   return (
     <div className={`theme-bg-secondary`}>
@@ -164,6 +169,7 @@ export default function HomePhilosophy() {
                   initial={`hide`}
                   animate={selected == 0 ? 'show' : 'hide'}
                   variants={variants}
+                  style={{ paddingTop: 30 }}
                 >
                   <HomeMessage />
                 </motion.div>
@@ -173,6 +179,7 @@ export default function HomePhilosophy() {
                   initial={`hide`}
                   animate={selected == 1 ? 'show' : 'hide'}
                   variants={variants}
+                  style={{ paddingTop: 30 }}
                 >
                   <HomeTeam />
                 </motion.div>
@@ -182,6 +189,7 @@ export default function HomePhilosophy() {
                   initial={`hide`}
                   animate={selected == 2 ? 'show' : 'hide'}
                   variants={variants}
+                  style={{ paddingTop: 30 }}
                 >
                   <HomeMetrics />
                 </motion.div>
