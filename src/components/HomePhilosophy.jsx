@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
   tab: {
     fontWeight: '700',
     width: '33%',
+    margin: '0 5px',
   },
 }))
 
@@ -67,7 +68,7 @@ function TabPanel(props) {
 
 export default function HomePhilosophy() {
   const [ref, inView, entry] = useInView({ threshold: 0.1 })
-  const [selected, setSelected] = React.useState(0)
+  const [selected, setSelected] = React.useState(false)
   const [stickyNav, setStickyNav] = React.useState(false)
   const stickyRef = React.useRef(null)
   const classes = useStyles()
@@ -101,13 +102,13 @@ export default function HomePhilosophy() {
   return (
     <div className={`theme-bg-secondary`}>
       <div className={`theme-bg-secondary philosophy`} id="philosophy">
-        <motion.div style={{ position: 'relative' }}>
+        <motion.div style={{ position: 'relative', minHeight: 410 }}>
+          <h2>What we do</h2>
           <p
             style={{
               maxWidth: 600,
-              margin: '50px auto',
+              margin: '20px auto 50px auto',
               textAlign: 'center',
-              fontWeight: '600',
             }}
           >
             We specialize in the world of complex and high-tech solutions,
