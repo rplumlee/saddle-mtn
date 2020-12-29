@@ -35,7 +35,7 @@ export default function HomeContact() {
       {' '}
       <div className="shape4 theme-bg-primary"></div>
       <div className="shape5 theme-bg-tertiary"></div>
-      <div className={`contact theme-bg-secondary`}>
+      <div className={`contact theme-bg-secondary`} id="contact">
         <h2>Get in touch</h2>
         <p>
           Feel free to shoot us an email at{' '}

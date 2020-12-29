@@ -359,7 +359,8 @@ Button {
 .transition {
   transition: 200ms;
 }
-body .PrivateTabIndicator-colorSecondary-6 {
+body .PrivateTabIndicator-colorSecondary-6,
+body .MuiTabs-indicator {
   background: linear-gradient(
     to top left,
     rgb(218, 163, 98),
@@ -527,7 +528,7 @@ body .stickyN {
   position: relative;
   &:before {
     position: relative;
-    height: 78px;
+    height: 108px;
     display: block;
     content: '';
     width: 100%;

@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tabs: {
     display: 'inline-flex',
-    padding: '0px',
+    margin: '0px 0 30px 0',
     minWidth: 800,
     width: '100%',
   },
@@ -89,11 +89,10 @@ export default function HomePhilosophy() {
     const viewportOffset = stickyRef.current.getBoundingClientRect()
     const bodyOffset = document.body.getBoundingClientRect()
     scrollY.onChange(() => {
-      console.log(viewportOffset.top - bodyOffset.top)
-      if (scrollY.get() > viewportOffset.top - bodyOffset.top) {
+      if (scrollY.get() >= viewportOffset.top - bodyOffset.top) {
         setStickyNav(true)
       }
-      if (scrollY.get() <= viewportOffset.top - bodyOffset.top) {
+      if (scrollY.get() < viewportOffset.top - bodyOffset.top) {
         setStickyNav(false)
       }
     })
@@ -101,7 +100,7 @@ export default function HomePhilosophy() {
 
   return (
     <div className={`theme-bg-secondary`}>
-      <div className={`theme-bg-secondary philosophy`}>
+      <div className={`theme-bg-secondary philosophy`} id="philosophy">
         <motion.div style={{ position: 'relative' }}>
           <p
             style={{

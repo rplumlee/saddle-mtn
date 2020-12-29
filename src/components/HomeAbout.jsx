@@ -61,7 +61,7 @@ export default function HomeAbout() {
       <div className="shape3 theme-bg-tertiary"></div>
       <div className="shape2 theme-bg-secondary"></div>
 
-      <div className="home-about theme-bg">
+      <div className="home-about theme-bg" id="leadership">
         <div
           className="infographic-container theme-bg theme-text"
           style={{ clipPath: 'none' }}

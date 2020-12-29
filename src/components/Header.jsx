@@ -5,6 +5,7 @@ import DarkToggle from './DarkToggle'
 import Logo from './Logo'
 import LogoTest from './LogoTest'
 import { useSpring, animated } from 'react-spring'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const Boop = ({ children, ...boopConfig }) => {
   const [style, trigger] = useBoop({ rotation: 10 })
@@ -30,36 +31,29 @@ function Header({ colorMode, toggleColorMode, openMobile, toggleOpenMobile }) {
   return (
     <div>
       <header className="">
-        <div className="header-logo theme-text">
+        <div className="header-logo theme-text" style={{ cursor: 'default' }}>
           <LogoTest />
         </div>
         <ul className="header-menu">
           <li>
             <TextBoop>
-              <a href="#" className="theme-text">
-                Philosophy
-              </a>
+              <AnchorLink href="#philosophy" className="theme-text">
+                What we do
+              </AnchorLink>
             </TextBoop>
           </li>
           <li>
             <TextBoop>
-              <a href="#" className="theme-text">
-                Services
-              </a>
-            </TextBoop>
-          </li>
-          <li>
-            <TextBoop>
-              <a href="#" className="theme-text">
+              <AnchorLink href="#leadership" className="theme-text">
                 Leadership
-              </a>
+              </AnchorLink>
             </TextBoop>
           </li>{' '}
           <li>
             <TextBoop>
-              <a href="#" className="theme-text">
+              <AnchorLink href="#contact" className="theme-text">
                 Contact
-              </a>
+              </AnchorLink>
             </TextBoop>
           </li>
           <li>

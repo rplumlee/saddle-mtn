@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button'
 import ThemeContext from './layout'
 import Particles from 'react-particles-js'
 import { GiPerson } from 'react-icons/gi'
-
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 // Import typefaces
 import 'typeface-montserrat'
 import 'typeface-merriweather'
@@ -92,37 +92,41 @@ export default function HomeParticles({ children, location }) {
             marginBottom: 50,
           }}
         >
-          <Button
-            href="#"
-            variant="contained"
-            color="primary"
-            size="large"
-            style={{
-              padding: '12px 30px',
-              marginTop: 20,
-              fontWeight: 500,
-              boxShadow: 'none',
-              background:
-                'linear-gradient(to top left, rgb(218, 163, 98), rgb(231, 138, 92), rgb(243, 110, 86), rgb(252, 72, 81))',
-            }}
-          >
-            philosophy
-          </Button>
-          <Button
-            href="#text-buttons"
-            color="primary"
-            size="large"
-            className="theme-text"
-            style={{
-              padding: '12px 30px',
-              marginTop: 20,
-              marginLeft: 20,
-              fontWeight: 500,
-              background: 'rgba(125,125,125,.1)',
-            }}
-          >
-            Message Us
-          </Button>
+          <AnchorLink href="#philosophy">
+            <Button
+              href="#"
+              variant="contained"
+              color="primary"
+              size="large"
+              style={{
+                padding: '12px 30px',
+                marginTop: 20,
+                fontWeight: 500,
+                boxShadow: 'none',
+                background:
+                  'linear-gradient(to top left, rgb(218, 163, 98), rgb(231, 138, 92), rgb(243, 110, 86), rgb(252, 72, 81))',
+              }}
+            >
+              services
+            </Button>
+          </AnchorLink>
+          <AnchorLink href="#contact">
+            <Button
+              href="#text-buttons"
+              color="primary"
+              size="large"
+              className="theme-text"
+              style={{
+                padding: '12px 30px',
+                marginTop: 20,
+                marginLeft: 20,
+                fontWeight: 500,
+                background: 'rgba(125,125,125,.1)',
+              }}
+            >
+              Message Us
+            </Button>
+          </AnchorLink>
         </div>
         <div className="theme-text home-infographic">
           <svg
