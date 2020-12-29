@@ -6,8 +6,8 @@ const c1variants = {
   light: { fill: '#fff', scale: 0 },
 }
 const c2variants = {
-  dark: { fill: '#212121', scale: 1, x: 0, y: 0 },
-  light: { fill: '#212121', scale: [1, 1.1, 1, 1], x: -4, y: 12 },
+  dark: { fill: '#151515', scale: 1, x: 0, y: 0 },
+  light: { fill: '#151515', scale: [1, 1.1, 1, 1], x: -4, y: 12 },
 }
 const l4variants = {
   dark: { stroke: '#212121', x: 0, y: 5, scale: 0 },
@@ -75,7 +75,7 @@ function DarkToggle({ colorMode, toggleColorMode }) {
           cy="10"
           r="8"
           transition={{ duration: 0.19 }}
-          fill={colorMode === 'light' ? '#212121' : '#fff'}
+          fill={colorMode === 'light' ? '#151515' : '#fff'}
           variants={c1variants}
           animate={colorMode === 'light' ? 'light' : 'dark'}
         />
@@ -84,7 +84,7 @@ function DarkToggle({ colorMode, toggleColorMode }) {
           cy="6"
           r="8"
           transition={{ duration: 0.19 }}
-          fill={colorMode === 'light' ? '#fff' : '#212121'}
+          fill={colorMode === 'light' ? '#fff' : '#151515'}
           variants={c2variants}
           animate={colorMode === 'light' ? 'light' : 'dark'}
         />

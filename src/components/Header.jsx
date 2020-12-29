@@ -28,8 +28,8 @@ const TextBoop = ({ children, ...boopConfig }) => {
 
 function Header({ colorMode, toggleColorMode, openMobile, toggleOpenMobile }) {
   return (
-    <div className={`theme-${colorMode}`}>
-      <header className={`theme-${colorMode}`}>
+    <div>
+      <header className="">
         <div className="header-logo theme-text">
           <LogoTest />
         </div>

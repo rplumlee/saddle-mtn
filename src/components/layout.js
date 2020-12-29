@@ -49,7 +49,7 @@ export default function Layout({ children, location }) {
         }
       `}
       render={(data) => {
-        const [colorMode, toggleColorMode] = useCycle('dark', 'light')
+        const [colorMode, toggleColorMode] = useCycle('light', 'dark')
         const [allowed, setAllowed] = useLocalStorageState('SMG_DEV')
         const [openMobile, toggleOpenMobile] = useCycle(false, true)
 

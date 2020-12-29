@@ -7,6 +7,7 @@ import Layout from '../components/layout'
 import HomeHero from '../components/HomeHero'
 import HomePhilosophy from '../components/HomePhilosophy'
 import HomeMessage from '../components/HomeMessage'
+import HomeParticles from '../components/HomeParticles'
 import { rhythm } from '../utils/typography'
 import BackgroundImage from 'gatsby-background-image'
 import '../styles.scss'
@@ -24,9 +25,9 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={location}>
         <Helmet title={siteTitle} />
-        <HomeHero />
+        <HomeParticles />
         <HomePhilosophy />
-        <HomeMessage />
+        <HomeHero />
       </Layout>
     )
   }

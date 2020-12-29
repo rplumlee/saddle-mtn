@@ -75,68 +75,6 @@ export default function HomeHero({ children, location }) {
               }}
             >
               <div className="home-hero-overlay"></div>
-              <motion.h1
-                style={{
-                  ...scale(1.1),
-                  textAlign: 'center',
-                  color: '#fff',
-                  left: 0,
-                  right: 0,
-                  top: rhythm(4),
-                  marginTop: '0',
-                  height: rhythm(2.5),
-                  textTransform: 'uppercase',
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontWeight: '700',
-                  opacity: 0,
-                  width: '80%',
-                  margin: '0 auto',
-                  letterSpacing: '0.2rem',
-                }}
-                variants={variants}
-                initial={'hidden'}
-                animate={'visible'}
-                transition={{
-                  ease: 'easeOut',
-                  duration: 1,
-                  staggerChildren: 0.5,
-                }}
-              >
-                Transform your business
-                <motion.small
-                  variants={variants}
-                  style={{
-                    fontSize: '.9rem',
-                    display: 'block',
-                    textTransform: 'none',
-                    fontWeight: '500',
-                    maxWidth: 700,
-                    lineHeight: '1.25rem',
-                    margin: '15px auto 0 auto',
-                  }}
-                >
-                  Take your sales organization to the next level with 40 years
-                  of industry leading, data driven knowledge.
-                  <motion.div variants={variants}>
-                    <Button
-                      href="#"
-                      variant="contained"
-                      color="primary"
-                      size="large"
-                      style={{
-                        padding: '12px 30px',
-                        marginTop: 40,
-                        fontFamily: 'Lato, sans-serif',
-                        fontWeight: 500,
-                        background:
-                          'linear-gradient(to top left, rgb(218, 163, 98), rgb(231, 138, 92), rgb(243, 110, 86), rgb(252, 72, 81))',
-                      }}
-                    >
-                      Learn More
-                    </Button>
-                  </motion.div>
-                </motion.small>
-              </motion.h1>
             </BackgroundImage>
           </>
         )
