@@ -89,10 +89,7 @@ export default function HomePhilosophy() {
   const onChange = React.useCallback(() => {
     const viewportOffset = stickyRef.current.getBoundingClientRect()
     const bodyOffset = document.body.getBoundingClientRect()
-    if (
-      scrollY.get() >= viewportOffset.top - bodyOffset.top &&
-      selected != false
-    ) {
+    if (scrollY.get() >= viewportOffset.top - bodyOffset.top) {
       setStickyNav(true)
     }
     if (scrollY.get() < viewportOffset.top - bodyOffset.top) {
