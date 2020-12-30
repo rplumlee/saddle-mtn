@@ -154,7 +154,7 @@ export default function HomePhilosophy() {
                   className={`${classes.tab}`}
                 />
                 <Tab
-                  label="Metrics & KPIs"
+                  label="Metrics & KPI's"
                   icon={<FaChartPie style={{ fontSize: 33, lineHeight: 55 }} />}
                   aria-label="person"
                   className={`${classes.tab}`}

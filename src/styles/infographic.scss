@@ -19,11 +19,11 @@
   padding-bottom: 100px;
   position: relative;
   overflow: visible;
-  min-height: 85vh;
+  min-height: 75vh;
 }
 .infolayer {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 61%, 50% 71%, 0 61%);
-  clip-path: polygon(0 0, 100% 0, 100% 57%, 50% 68%, 0 57%);
+  clip-path: polygon(0 0, 100% 0, 100% 53%, 50% 59%, 0 53%);
   z-index: 3;
   padding-bottom: 7%;
   position: absolute;

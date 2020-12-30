@@ -2,7 +2,7 @@ import React from 'react'
 import { motion, useAnimation, useTransform, useSpring } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { GiAtom, GiHighKick, GiChart } from 'react-icons/gi'
-
+import Button from '@material-ui/core/Button'
 const variants = {
   hidden: {
     opacity: 0,
@@ -38,10 +38,22 @@ export default function HomeContact() {
       <div className={`contact theme-bg`} id="contact">
         <h2>Get in touch</h2>
         <p>
-          Feel free to shoot us an email at{' '}
-          <a href="mailto:info@saddlemountaingroup.com">
+          <Button
+            href="mailto:info@saddlemountaingroup.com"
+            color="primary"
+            size="large"
+            className="theme-text"
+            style={{
+              padding: '12px 30px',
+              marginTop: 20,
+              marginLeft: 20,
+              fontWeight: 500,
+              background: 'rgba(125,125,125,.1)',
+              textTransform: 'none',
+            }}
+          >
             info@saddlemountaingroup.com
-          </a>
+          </Button>
         </p>
       </div>
     </>

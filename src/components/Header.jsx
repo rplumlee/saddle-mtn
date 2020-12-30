@@ -37,7 +37,11 @@ function Header({ colorMode, toggleColorMode, openMobile, toggleOpenMobile }) {
         <ul className="header-menu">
           <li>
             <TextBoop>
-              <AnchorLink href="#philosophy" className="theme-text">
+              <AnchorLink
+                href="#philosophy"
+                offset="-100"
+                className="theme-text"
+              >
                 What we do
               </AnchorLink>
             </TextBoop>

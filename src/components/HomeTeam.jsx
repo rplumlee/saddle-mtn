@@ -2,7 +2,9 @@ import React from 'react'
 import { motion, useAnimation, useTransform, useSpring } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { GiAtom, GiHighKick, GiChart } from 'react-icons/gi'
-
+import { BsClipboardData } from 'react-icons/bs'
+import { GrInstall } from 'react-icons/gr'
+import { AiOutlineLineChart } from 'react-icons/ai'
 const variants = {
   hidden: {
     opacity: 0,
@@ -17,160 +19,142 @@ const variants = {
     },
   },
 }
-
 const clip_path_variants = {
-  open: {
-    pathLength: 1,
+  open: (i) => ({
+    pathLength: [0, 1, 1, 1, 1],
+    opacity: [0, 1, 1, 1, 0],
     transition: {
-      duration: 0.4,
+      duration: 4,
+      delay: i,
+      repeat: Infinity,
     },
-  },
-  closed: {
+  }),
+  closed: (i) => ({
+    opacity: 0,
     pathLength: 0,
-  },
+    transition: {
+      duration: 1,
+      delay: 0.9 - i,
+    },
+  }),
 }
 export default function HomeTeam() {
   const [ref, inView, entry] = useInView({ threshold: 1 })
   const [ref1, inView1, entry1] = useInView({ threshold: 1 })
   const [ref2, inView2, entry2] = useInView({ threshold: 1 })
 
-  const animation = useAnimation()
   const animation1 = useAnimation()
-  const animation2 = useAnimation()
 
   React.useEffect(() => {
     if (inView) {
-      animation.start('open')
-    }
-  }, [animation, inView])
-
-  React.useEffect(() => {
-    if (inView1) {
       animation1.start('open')
     }
-  }, [animation1, inView1])
-
-  React.useEffect(() => {
-    if (inView2) {
-      animation2.start('open')
-    }
-  }, [animation2, inView2])
+  }, [animation1, inView])
 
   return (
-    <div className={`message`}>
-      <GiAtom
-        className="icon-spin"
-        style={{
-          fill: 'url(#gradient)',
-          fontSize: 280,
-          position: 'absolute',
-          right: -50,
-          zIndex: 1,
-          opacity: 0.3,
-        }}
-      />
+    <div className={`message team`}>
       <motion.div className="">
         <h2>Building a World Class Team</h2>
         <p>
-          You can’t arm &amp; aim your sales organization without having a clear
-          and effective core value proposition that differentiates your solution
-          from your competitors. Many organizations fail to create a
-          comprehensive messaging framework to be used for internal and external
-          communications. Without a strong, clear and concise value message,
-          your sales team will struggle on the phone and in the field to win the
-          business your company deserves.
+          Complex solution selling is an expensive endeavor, requiring a
+          commitment of resources throughout the organization. Winning sales
+          organizations not only bring in critical revenue, but they help create
+          a sustainable customer base, ensuring a recurring revenue stream for
+          future success.
         </p>
+        <ol ref={ref}>
+          <li>
+            <div className="card theme-bg-secondary">
+              <BsClipboardData className="theme-fill icon" />
+              Assess & Prescribe
+            </div>
+            <div className="shape theme-bg-secondary"></div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              width="30"
+              strokeWidth="2"
+              className="arrow"
+            >
+              <motion.path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                stroke="url(#gradient)"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                variants={clip_path_variants}
+                initial={'closed'}
+                animate={animation1}
+                custom={0.3}
+              />
+            </svg>
+          </li>
+          <li>
+            <div className="card  theme-bg-secondary">
+              <GrInstall className="theme-stroke icon" />
+              Install Improved Process
+            </div>
+            <div className="shape theme-bg-secondary"></div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              width="30"
+              strokeWidth="2"
+              className="arrow"
+            >
+              <motion.path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                stroke="url(#gradient)"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                variants={clip_path_variants}
+                initial={'closed'}
+                animate={animation1}
+                custom={0.6}
+              />
+            </svg>
+          </li>
+          <li>
+            <div className="card theme-bg-secondary">
+              <AiOutlineLineChart className="theme-stroke icon" />
+              Measure Results
+            </div>
+            <div className="shape theme-bg-secondary"></div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              width="30"
+              strokeWidth="2"
+              className="arrow"
+            >
+              <motion.path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                stroke="url(#gradient)"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                variants={clip_path_variants}
+                initial={'closed'}
+                animate={animation1}
+                custom={0.9}
+              />
+            </svg>
+          </li>
+        </ol>
         <p>
-          Saddle Mountain Group will do a deep dive into your current value
-          messaging and essentially act as a proxy for your target customer.
-          We’ll “stress test” your current messaging strategy to make sure it
-          holds up under competitive fire. In addition, SMG will ensure your
-          core messaging can be conveyed to your sales organization through an
-          effective toolset.
+          When a company is consistently winning in the marketplace, the success
+          acts as a flywheel that increases positive momentum throughout the
+          organization. Recruiting and retaining top talent becomes much easier.
+          SMG provides a comprehensive assessment of your sales organization’s
+          effectiveness in the marketplace. Our phased approach is as follows:
         </p>
-
-        <div className="messaging-layout">
-          <ol>
-            <li>
-              <div className="card theme-bg">
-                <span>1</span>Evaluate &amp; Assess Current Value Message
-              </div>
-              <div className="shape theme-bg-tertiary"></div>
-              <svg ref={ref} strokeWidth="3">
-                <motion.path
-                  d="M 0 40 C 80 130 60 10 0 100 L 10 100 L 0 90 L 0 100"
-                  fill="none"
-                  stroke="url(#gradient)"
-                  variants={clip_path_variants}
-                  initial={'closed'}
-                  animate={animation}
-                />
-              </svg>
-            </li>
-            <li>
-              <div className="card theme-bg">
-                <span>2</span>Recraft &amp; Refine Value Messaging
-              </div>
-              <div className="shape theme-bg-tertiary"></div>
-              <svg ref={ref1} strokeWidth="3">
-                <motion.path
-                  d="M 0 40 C 80 130 60 10 0 100 L 10 100 L 0 90 L 0 100"
-                  fill="none"
-                  stroke="url(#gradient)"
-                  variants={clip_path_variants}
-                  initial={'closed'}
-                  animate={animation1}
-                />
-              </svg>
-            </li>
-            <li>
-              <div className="card theme-bg">
-                <span>3</span>Deploy to Sales Org.
-              </div>
-              <div className="shape theme-bg-tertiary"></div>
-              <svg ref={ref2} strokeWidth="3">
-                <motion.path
-                  d="M 0 40 C 80 130 60 10 0 100 L 10 100 L 0 90 L 0 100"
-                  fill="none"
-                  stroke="url(#gradient)"
-                  variants={clip_path_variants}
-                  initial={'closed'}
-                  animate={animation2}
-                />
-              </svg>
-            </li>
-            <li>
-              <div className="shape theme-bg-tertiary"></div>
-              <div className="card theme-bg">
-                <span>4</span>Measure &amp; Validate Effectiveness
-              </div>
-            </li>
-          </ol>
-          <div>
-            <h3>
-              Saddle Mountain Group – value messaging questions we will explore
-              with you:
-            </h3>
-            <ul>
-              <li>
-                Is your value messaging aligned with your solution’s core
-                benefits?
-              </li>
-              <li>
-                Is your value messaging clear, compelling and clearly
-                differentiated from the competition?
-              </li>
-              <li>
-                Does your sales organization have the tools and training to
-                effectively convey the message?
-              </li>
-              <li>
-                Do you have any validation mechanisms in place to ensure your
-                message is effective in winning new customers?
-              </li>
-            </ul>
-          </div>
-        </div>
       </motion.div>
     </div>
   )

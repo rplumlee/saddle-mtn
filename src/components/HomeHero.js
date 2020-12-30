@@ -65,7 +65,7 @@ export default function HomeHero({ children, location }) {
               backgroundColor={`#007ACC`}
               style={{
                 paddingBottom: 0,
-                height: '75vh',
+                height: '65vh',
                 minHeight: 500,
                 position: 'relative',
                 display: 'flex',
@@ -74,7 +74,9 @@ export default function HomeHero({ children, location }) {
                 maxHeight: 1000,
                 backgroundPosition: '0% 100%',
               }}
-            ></BackgroundImage>
+            >
+              <div className="home-hero-overlay"></div>
+            </BackgroundImage>
           </>
         )
       }}

@@ -59,33 +59,38 @@ export default function HomeAbout() {
   return (
     <div style={{ position: 'relative' }}>
       <div className="shape3 theme-bg-tertiary"></div>
-      <div className="shape2 theme-bg"></div>
 
       <div className="home-about theme-bg-secondary" id="leadership">
         <div
           className="infographic-container theme-text"
           style={{ clipPath: 'none' }}
         >
-          <div className="container" style={{}}>
-            <h2>Leadership</h2>
-            <p>
-              Saddle Mountain Group is led by Maury Plumlee, founder and
-              principal partner. Maury started his career in sales with
-              Portland-based Viewpoint in 1980, and his sales management
-              responsibilities grew as the company expanded into a global leader
-              in construction ERP solutions. During this time-period, Viewpoint
-              grew from less than 20 employees to over 800 today.{' '}
-            </p>
-            <p>
-              Maury’s skills and expertise were honed by the competitive world
-              of front-line ERP sales; this gave him the foundation to help
-              build and lead the Viewpoint Sales Organization through
-              substantial growth and success. In 2015, after a 30+ year career
-              in all aspects of sales, Maury moved to VP of Global Marketing,
-              where he led branding, messaging &amp; lead generation activities
-              across Viewpoint’s global organization. Viewpoint was acquired by
-              Trimble Corporation in 2018.
-            </p>
+          <div className="container" style={{ display: 'flex' }}>
+            <div className="img-container">
+              <div></div>
+              <img src="/Headshot-Plumlee-Gray.jpg" />
+            </div>
+            <div style={{ paddingLeft: 30 }}>
+              <h2>Leadership</h2>
+              <p>
+                Saddle Mountain Group is led by Maury Plumlee, founder and
+                principal partner. Maury started his career in sales with
+                Portland-based Viewpoint in 1980, and his sales management
+                responsibilities grew as the company expanded into a global
+                leader in construction ERP solutions. During this time-period,
+                Viewpoint grew from less than 20 employees to over 800 today.{' '}
+              </p>
+              <p>
+                Maury’s skills and expertise were honed by the competitive world
+                of front-line ERP sales; this gave him the foundation to help
+                build and lead the Viewpoint Sales Organization through
+                substantial growth and success. In 2015, after a 30+ year career
+                in all aspects of sales, Maury moved to VP of Global Marketing,
+                where he led branding, messaging &amp; lead generation
+                activities across Viewpoint’s global organization. Viewpoint was
+                acquired by Trimble Corporation in 2018.
+              </p>
+            </div>
           </div>
           <div
             className="theme-text home-infographic"

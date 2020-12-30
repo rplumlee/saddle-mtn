@@ -92,7 +92,7 @@ export default function HomeParticles({ children, location }) {
             marginBottom: 50,
           }}
         >
-          <AnchorLink href="#philosophy">
+          <AnchorLink href="#philosophy" offset="-100">
             <Button
               href="#"
               variant="contained"
