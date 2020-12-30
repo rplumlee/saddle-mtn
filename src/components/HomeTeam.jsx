@@ -21,10 +21,10 @@ const variants = {
 }
 const clip_path_variants = {
   open: (i) => ({
-    pathLength: [0, 1, 1, 1, 1],
-    opacity: [0, 1, 1, 1, 0],
+    pathLength: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    opacity: [0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
     transition: {
-      duration: 4,
+      duration: 5,
       delay: i,
       repeat: Infinity,
     },
@@ -32,16 +32,10 @@ const clip_path_variants = {
   closed: (i) => ({
     opacity: 0,
     pathLength: 0,
-    transition: {
-      duration: 1,
-      delay: 0.9 - i,
-    },
   }),
 }
 export default function HomeTeam() {
   const [ref, inView, entry] = useInView({ threshold: 1 })
-  const [ref1, inView1, entry1] = useInView({ threshold: 1 })
-  const [ref2, inView2, entry2] = useInView({ threshold: 1 })
 
   const animation1 = useAnimation()
 
@@ -87,7 +81,7 @@ export default function HomeTeam() {
                 variants={clip_path_variants}
                 initial={'closed'}
                 animate={animation1}
-                custom={0.3}
+                custom={0.5}
               />
             </svg>
           </li>
@@ -115,7 +109,7 @@ export default function HomeTeam() {
                 variants={clip_path_variants}
                 initial={'closed'}
                 animate={animation1}
-                custom={0.6}
+                custom={1}
               />
             </svg>
           </li>
@@ -143,7 +137,7 @@ export default function HomeTeam() {
                 variants={clip_path_variants}
                 initial={'closed'}
                 animate={animation1}
-                custom={0.9}
+                custom={1.5}
               />
             </svg>
           </li>

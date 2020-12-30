@@ -25,17 +25,20 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     position: 'relative',
+    maxWidth: '100%',
   },
   tabs: {
     display: 'inline-flex',
     margin: '0px 0 30px 0',
-    minWidth: 800,
     width: '100%',
+    maxWidth: '100%',
   },
   tab: {
     fontWeight: '700',
     width: '33%',
-    margin: '0 5px',
+  },
+  box: {
+    padding: 0,
   },
 }))
 
@@ -108,7 +111,6 @@ export default function HomePhilosophy() {
           <h2>What we do</h2>
           <p
             style={{
-              maxWidth: 600,
               margin: '20px auto 50px auto',
               textAlign: 'center',
             }}
@@ -161,7 +163,7 @@ export default function HomePhilosophy() {
                 />
               </Tabs>
 
-              <TabPanel value={selected} index={0}>
+              <TabPanel value={selected} index={0} style={{ padding: 0 }}>
                 <motion.div
                   initial={`hide`}
                   animate={selected == 0 ? 'show' : 'hide'}

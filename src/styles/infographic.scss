@@ -20,9 +20,33 @@
   position: relative;
   overflow: visible;
   min-height: 75vh;
+
+  h1 {
+    padding: 170px 30px 10px 30px;
+  }
+
+  @media (max-width: $screen-sm) {
+    h1 {
+      font-size: 1.9rem;
+      padding-top: 150px;
+    }
+  }
+  @media (max-width: $screen-xs) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 68%, 50% 75%, 0 68%);
+    clip-path: polygon(0 0, 100% 0, 100% 68%, 50% 78%, 0 68%);
+    h1 {
+      font-size: 1.6rem;
+      padding: 150px 50px 10px 50px;
+    }
+  }
+  @media (max-width: $screen-xxs) {
+    min-height: 95vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 71%, 0 60%);
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 71%, 0 60%);
+  }
 }
 .infolayer {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 61%, 50% 71%, 0 61%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 53%, 50% 59%, 0 53%);
   clip-path: polygon(0 0, 100% 0, 100% 53%, 50% 59%, 0 53%);
   z-index: 3;
   padding-bottom: 7%;
@@ -32,12 +56,20 @@
   top: 0;
   left: 0;
   content: '';
+  @media (max-width: $screen-xs) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 54%, 50% 58%, 0 54%);
+    clip-path: polygon(0 0, 100% 0, 100% 54%, 50% 58%, 0 54%);
+  }
+  @media (max-width: $screen-xxs) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 69%, 0 60%);
+    clip-path: polygon(0 0, 100% 0, 100% 62%, 50% 67%, 0 62%);
+  }
 }
 .home-infographic {
   height: 35vh;
   padding: 0;
   opacity: 0.1;
-  margin: -67vh auto 0 auto;
+  margin: -65vh auto 0 auto;
   width: auto;
   z-index: 1;
   position: relative;
@@ -52,6 +84,14 @@
   rect,
   polygon {
     transform-origin: 0%, 0%;
+  }
+
+  @media (max-width: $screen-sm) {
+    margin: -48vh auto 0 auto;
+  }
+  @media (max-width: $screen-xs) {
+    margin: -44vh auto 0 auto;
+    width: 150vw;
   }
 }
 .marketPath,

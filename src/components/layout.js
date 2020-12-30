@@ -86,6 +86,7 @@ export default function Layout({ children, location }) {
                 colorMode={colorMode}
                 toggleColorMode={toggleColorMode}
                 openMobile={openMobile}
+                toggleOpenMobile={toggleOpenMobile}
               />
             </div>
           </ThemeContext.Provider>

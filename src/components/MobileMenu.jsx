@@ -42,7 +42,12 @@ const mobileMenuVariants = {
   },
 }
 
-function MobileMenu({ colorMode, toggleColorMode, openMobile }) {
+function MobileMenu({
+  colorMode,
+  toggleColorMode,
+  openMobile,
+  toggleOpenMobile,
+}) {
   React.useEffect(() => {
     if (openMobile === true) {
       document.body.style.position = 'fixed'
@@ -53,6 +58,26 @@ function MobileMenu({ colorMode, toggleColorMode, openMobile }) {
     }
   }, [openMobile])
 
+  let realClick = React.useRef(true)
+
+  const handleClick = (e) => {
+    const { target, nativeEvent } = e
+    const clonedNativeEvent = new MouseEvent('click', nativeEvent)
+
+    if (!realClick.current) {
+      realClick.current = true
+      return
+    }
+
+    e.preventDefault()
+    e.stopPropagation()
+
+    toggleOpenMobile()
+
+    realClick.current = false
+    target.dispatchEvent(clonedNativeEvent)
+  }
+
   return (
     <motion.ul
       className="mobile-menu theme-bg"
@@ -62,32 +87,25 @@ function MobileMenu({ colorMode, toggleColorMode, openMobile }) {
     >
       <li>
         <TextBoop>
-          <a href="#" className="theme-text">
-            Philosophy
+          <a href="#philosophy" className="theme-text" onClick={handleClick}>
+            What we do
           </a>
         </TextBoop>
       </li>
       <li>
         <TextBoop>
-          <a href="#" className="theme-text">
-            Services
-          </a>
-        </TextBoop>
-      </li>
-      <li>
-        <TextBoop>
-          <a href="#" className="theme-text">
+          <a href="#leadership" className="theme-text" onClick={handleClick}>
             Leadership
           </a>
         </TextBoop>
-      </li>{' '}
+      </li>
       <li>
         <TextBoop>
-          <a href="#" className="theme-text">
+          <a href="#contact" className="theme-text" onClick={handleClick}>
             Contact
           </a>
         </TextBoop>
-      </li>
+      </li>{' '}
       <li style={{ transform: 'scale(1.4)' }}>
         <DarkToggle colorMode={colorMode} toggleColorMode={toggleColorMode} />
       </li>

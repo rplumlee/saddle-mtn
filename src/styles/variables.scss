@@ -1,0 +1,21 @@
+$screen-sm: 900px;
+$screen-xs: 650px;
+$screen-xxs: 410px;
+
+$color-dark-1: #212121;
+$color-dark-2: #323232;
+$color-dark-3: #434343;
+
+$color-light-1: #ffffff;
+$color-light-2: #f1f1f1;
+$color-light-3: #e4e4e4;
+
+$color-neutral: rgba(124, 124, 124, 0.4);
+
+$gradient: linear-gradient(
+  to top left,
+  rgb(218, 163, 98),
+  rgb(231, 138, 92),
+  rgb(243, 110, 86),
+  rgb(252, 72, 81)
+);

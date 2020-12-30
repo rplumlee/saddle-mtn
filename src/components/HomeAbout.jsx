@@ -70,7 +70,7 @@ export default function HomeAbout() {
               <div></div>
               <img src="/Headshot-Plumlee-Gray.jpg" />
             </div>
-            <div style={{ paddingLeft: 30 }}>
+            <div className="leader">
               <h2>Leadership</h2>
               <p>
                 Saddle Mountain Group is led by Maury Plumlee, founder and

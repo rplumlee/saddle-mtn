@@ -20,18 +20,18 @@ const variants = {
 
 const clip_path_variants = {
   open: (i) => ({
-    pathLength: [0, 1, 1, 1, 1],
-    opacity: [0, 1, 1, 1, 0],
+    pathLength: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    opacity: [0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
     transition: {
-      duration: 4,
+      duration: 5,
       delay: i,
       repeat: Infinity,
     },
   }),
-  closed: {
+  closed: (i) => ({
     opacity: 0,
     pathLength: 0,
-  },
+  }),
 }
 export default function HomeMessage() {
   const [ref, inView, entry] = useInView({ threshold: 1 })
@@ -106,7 +106,7 @@ export default function HomeMessage() {
                 variants={clip_path_variants}
                 initial={'closed'}
                 animate={animation1}
-                custom={0.6}
+                custom={0.8}
               />
             </svg>
           </li>
@@ -130,7 +130,7 @@ export default function HomeMessage() {
                 variants={clip_path_variants}
                 initial={'closed'}
                 animate={animation1}
-                custom={0.9}
+                custom={1.3}
               />
             </svg>
           </li>

@@ -67,8 +67,6 @@ export default function HomeParticles({ children, location }) {
         <h1
           style={{
             textAlign: 'center',
-            paddingTop: 210,
-            paddingBottom: 10,
             margin: '0 auto',
             zIndex: 2,
             position: 'relative',

@@ -40,9 +40,9 @@ function LogoTest() {
       </svg>
       <div className="logo-text theme-text">
         <span>Saddle</span>
-        <br />
+
         <span>Mountain</span>
-        <br />
+
         <p>Group</p>
       </div>
     </>
