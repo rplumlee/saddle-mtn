@@ -8,7 +8,13 @@ import { motion, useMotionValue, animate, useAnimation } from 'framer-motion'
 import { rhythm, scale } from '../utils/typography'
 import Button from '@material-ui/core/Button'
 import ThemeContext from './layout'
-
+import {
+  FcCollaboration,
+  FcProcess,
+  FcGenealogy,
+  FcPositiveDynamic,
+  FcOpenedFolder,
+} from 'react-icons/fc'
 // Import typefaces
 import 'typeface-montserrat'
 import 'typeface-merriweather'
@@ -58,6 +64,43 @@ export default function HomeHero({ children, location }) {
 
         return (
           <>
+            <div className={``} id="wwd">
+              <div className={'wwd'}>
+                <motion.ul className="theme-bg" id="servicess">
+                  <li className="theme-bg">
+                    <FcOpenedFolder fill="#fff" /> <h5>Assessment</h5>
+                    <p>
+                      40 years of industry leading experience has taught us what
+                      to look for. We analyze your operation from the ground up.
+                    </p>
+                  </li>
+                  <li className="theme-bg">
+                    <FcCollaboration fill="#fff" /> <h5>Strategy</h5>{' '}
+                    <p>
+                      Build processes to align your messaging with your product
+                      and penetrate markets effectively.
+                    </p>
+                  </li>
+                  <li className="theme-bg">
+                    <FcProcess fill="#fff" />
+                    <h5>Scalability</h5>{' '}
+                    <p>
+                      Make sure your orgs are scaling correctly by maintaining
+                      effective process improvement.
+                    </p>
+                  </li>
+                  <li className="theme-bg">
+                    <FcPositiveDynamic fill="#fff" />
+                    <h5>KPIs</h5>{' '}
+                    <p>
+                      Implement a framework for performance measurement and
+                      data-driven decision making.
+                    </p>
+                  </li>
+                </motion.ul>
+              </div>
+            </div>
+
             <BackgroundImage
               Tag="div"
               className="post-hero"
@@ -65,14 +108,14 @@ export default function HomeHero({ children, location }) {
               backgroundColor={`#007ACC`}
               style={{
                 paddingBottom: 0,
-                height: '65vh',
-                minHeight: 500,
+                height: '350px',
+                minHeight: 350,
                 position: 'relative',
                 display: 'flex',
                 justifyContent: 'center',
                 flexDirection: 'column',
                 maxHeight: 1000,
-                backgroundPosition: '0% 100%',
+                backgroundPosition: '100% 45%',
               }}
             >
               <div className="home-hero-overlay"></div>

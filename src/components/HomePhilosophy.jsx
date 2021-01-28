@@ -106,8 +106,8 @@ export default function HomePhilosophy() {
   }, [onChange])
 
   return (
-    <div className={`theme-bg-secondary`}>
-      <div className={`theme-bg-secondary philosophy`} id="philosophy">
+    <div className={`theme-bg`}>
+      <div className={`theme-bg philosophy`} id="philosophy">
         <motion.div style={{ position: 'relative' }}>
           <h2>What we do</h2>
           <p

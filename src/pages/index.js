@@ -29,9 +29,10 @@ class BlogIndex extends React.Component {
       <Layout location={location}>
         <Helmet title={siteTitle} />
         <HomeParticles />
-        <HomeWWD />
-        <HomePhilosophy />
+
         <HomeHero />
+        <HomePhilosophy />
+
         <HomeAbout />
         <HomeContact />
       </Layout>
