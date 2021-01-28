@@ -8,6 +8,7 @@ import { motion, useMotionValue, animate, useAnimation } from 'framer-motion'
 import { rhythm, scale } from '../utils/typography'
 import Button from '@material-ui/core/Button'
 import ThemeContext from './layout'
+import { BsArrowRight } from 'react-icons/bs'
 import {
   FcCollaboration,
   FcConferenceCall,
@@ -74,9 +75,9 @@ export default function HomeHero({ children, location }) {
                     style={{
                       position: 'absolute',
                       top: 0,
-                      left: 0,
+                      left: '-5%',
                       zIndex: 0,
-                      width: '100%',
+                      width: '110%',
                       height: '100%',
                     }}
                   >
@@ -89,28 +90,36 @@ export default function HomeHero({ children, location }) {
                   </svg>
                   <li className="theme-bg hover">
                     <div>
-                      <FcAlphabeticalSortingZa fill="#fff" />{' '}
-                      <h5>Assessment</h5>
+                      <h5>
+                        Assessment <BsArrowRight fill="#fff" />
+                      </h5>
                     </div>
                     <p>We go over your company with a fine toothed comb.</p>
                   </li>
                   <li className="theme-bg hover">
                     <div>
-                      <FcBiotech fill="#fff" /> <h5>Strategy</h5>
+                      <h5>
+                        Strategy
+                        <BsArrowRight fill="#fff" />
+                      </h5>
                     </div>
                     <p>Align your messaging and penetrate markets.</p>
                   </li>
                   <li className="theme-bg hover">
                     <div>
-                      <FcConferenceCall fill="#fff" />
-                      <h5>Scalability</h5>
+                      <h5>
+                        Scalability
+                        <BsArrowRight fill="#fff" />
+                      </h5>
                     </div>
                     <p>Implement mechanisms for continuous improvement.</p>
                   </li>
                   <li className="theme-bg hover">
                     <div>
-                      <FcComboChart fill="#fff" />
-                      <h5>KPIs</h5>
+                      <h5>
+                        KPIs
+                        <BsArrowRight fill="#fff" />
+                      </h5>
                     </div>
                     <p>Put in a framework for making data-driven decisions.</p>
                   </li>
