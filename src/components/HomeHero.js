@@ -10,10 +10,12 @@ import Button from '@material-ui/core/Button'
 import ThemeContext from './layout'
 import {
   FcCollaboration,
+  FcConferenceCall,
   FcProcess,
   FcGenealogy,
-  FcPositiveDynamic,
-  FcOpenedFolder,
+  FcComboChart,
+  FcAlphabeticalSortingZa,
+  FcBiotech,
 } from 'react-icons/fc'
 // Import typefaces
 import 'typeface-montserrat'
@@ -68,21 +70,21 @@ export default function HomeHero({ children, location }) {
               <div className={'wwd'}>
                 <motion.ul className="theme-bg" id="servicess">
                   <li className="theme-bg">
-                    <FcOpenedFolder fill="#fff" /> <h5>Assessment</h5>
+                    <FcAlphabeticalSortingZa fill="#fff" /> <h5>Assessment</h5>
                     <p>
-                      40 years of industry leading experience has taught us what
-                      to look for. We analyze your operation from the ground up.
+                      We start by assessing your organization from the ground up
+                      to get the lay of the land.
                     </p>
                   </li>
                   <li className="theme-bg">
-                    <FcCollaboration fill="#fff" /> <h5>Strategy</h5>{' '}
+                    <FcBiotech fill="#fff" /> <h5>Strategy</h5>{' '}
                     <p>
                       Build processes to align your messaging with your product
                       and penetrate markets effectively.
                     </p>
                   </li>
                   <li className="theme-bg">
-                    <FcProcess fill="#fff" />
+                    <FcConferenceCall fill="#fff" />
                     <h5>Scalability</h5>{' '}
                     <p>
                       Make sure your orgs are scaling correctly by maintaining
@@ -90,7 +92,7 @@ export default function HomeHero({ children, location }) {
                     </p>
                   </li>
                   <li className="theme-bg">
-                    <FcPositiveDynamic fill="#fff" />
+                    <FcComboChart fill="#fff" />
                     <h5>KPIs</h5>{' '}
                     <p>
                       Implement a framework for performance measurement and
