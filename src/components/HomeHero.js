@@ -68,42 +68,57 @@ export default function HomeHero({ children, location }) {
           <>
             <div className={``} id="wwd">
               <div className={'wwd'}>
-                <motion.ul className="theme-bg" id="servicess">
-                  <li className="theme-bg">
-                    <FcAlphabeticalSortingZa fill="#fff" /> <h5>Assessment</h5>
-                    <p>
-                      We start by assessing your organization from the ground up
-                      to get the lay of the land.
-                    </p>
+                <motion.ul className="" id="servicess">
+                  <svg
+                    viewbox="0 0 1600 360"
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      zIndex: 0,
+                      width: '100%',
+                      height: '100%',
+                    }}
+                  >
+                    <rect
+                      width="1600"
+                      height="360"
+                      fill="url(#linear)"
+                      style={{ borderRadius: 5 }}
+                    ></rect>
+                  </svg>
+                  <li className="theme-bg hover">
+                    <div>
+                      <FcAlphabeticalSortingZa fill="#fff" />{' '}
+                      <h5>Assessment</h5>
+                    </div>
+                    <p>We go over your company with a fine toothed comb.</p>
                   </li>
-                  <li className="theme-bg">
-                    <FcBiotech fill="#fff" /> <h5>Strategy</h5>{' '}
-                    <p>
-                      Build processes to align your messaging with your product
-                      and penetrate markets effectively.
-                    </p>
+                  <li className="theme-bg hover">
+                    <div>
+                      <FcBiotech fill="#fff" /> <h5>Strategy</h5>
+                    </div>
+                    <p>Align your messaging and penetrate markets.</p>
                   </li>
-                  <li className="theme-bg">
-                    <FcConferenceCall fill="#fff" />
-                    <h5>Scalability</h5>{' '}
-                    <p>
-                      Make sure your orgs are scaling correctly by maintaining
-                      effective process improvement.
-                    </p>
+                  <li className="theme-bg hover">
+                    <div>
+                      <FcConferenceCall fill="#fff" />
+                      <h5>Scalability</h5>
+                    </div>
+                    <p>Implement mechanisms for continuous improvement.</p>
                   </li>
-                  <li className="theme-bg">
-                    <FcComboChart fill="#fff" />
-                    <h5>KPIs</h5>{' '}
-                    <p>
-                      Implement a framework for performance measurement and
-                      data-driven decision making.
-                    </p>
+                  <li className="theme-bg hover">
+                    <div>
+                      <FcComboChart fill="#fff" />
+                      <h5>KPIs</h5>
+                    </div>
+                    <p>Put in a framework for making data-driven decisions.</p>
                   </li>
                 </motion.ul>
               </div>
             </div>
 
-            <BackgroundImage
+            {/* <BackgroundImage
               Tag="div"
               className="post-hero"
               fluid={homgePageHero}
@@ -121,7 +136,7 @@ export default function HomeHero({ children, location }) {
               }}
             >
               <div className="home-hero-overlay"></div>
-            </BackgroundImage>
+            </BackgroundImage> */}
           </>
         )
       }}

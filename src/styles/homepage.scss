@@ -76,26 +76,45 @@
     flex-wrap: wrap;
     margin-bottom: 0;
     justify-content: space-between;
-    padding: 0 20px;
-    border: 1px solid rgba(124, 124, 124, 0.35);
+    padding: 0;
+    border-top: 0px solid rgba(124, 124, 124, 0);
+    border-bottom: 3px solid rgba(124, 124, 124, 0);
     width: 100%;
     margin: 0 auto;
+    background: rgba(0, 0, 0, 0.2);
 
     li {
       width: 25%;
       display: flex;
       flex-direction: column;
-      padding: 0 20px 20px 20px;
+      padding: 15px 30px 30px 30px;
       align-items: flex-start;
       font-family: 'Open Sans';
-      border-right: 1px solid rgba(124, 124, 124, 0.35);
+      //border-right: 1px solid rgba(124, 124, 124, 0);
       margin-bottom: 0;
-
+      cursor: pointer;
       justify-content: flex-start;
-      border-radius: 3px;
+      border-radius: 0px;
       padding-top: 20px;
       text-transform: uppercase;
       position: relative;
+
+      transition: 700ms;
+
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      &:hover {
+        transition: 200ms;
+
+        p,
+        h5 {
+          color: #fff !important;
+        }
+      }
 
       &:last-of-type {
         border-right: none;
@@ -106,7 +125,7 @@
         font-weight: bold;
         z-index: 1;
         font-family: 'Montserrat', sans-serif;
-        margin: 20px 0 0px 0;
+        margin: 0 0 0 8px;
         font-size: 1.1rem;
       }
 
@@ -114,6 +133,7 @@
         text-transform: none;
         text-align: left;
         font-size: 0.9rem;
+        font-weight: 500;
       }
       svg {
         z-index: 1;
@@ -146,12 +166,29 @@
     }
   }
 }
-
+body {
+  font-weight: 500;
+}
 //philosophy
+#philosophy,
+#strategy {
+  padding-top: 70px;
+  padding-bottom: 50px;
 
+  h2 {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+
+    svg {
+      font-size: 60px;
+      margin-right: 15px;
+    }
+  }
+}
 .philosophy {
-  padding: 1200px 0 0 0;
-  text-align: center;
+  padding: 150px 0 0 0;
+  text-align: left;
   overflow: visible;
   margin-bottom: 0px;
   z-index: 4;
@@ -161,12 +198,61 @@
   position: relative;
   z-index: 1;
 
-  h2 {
-    margin-top: 30px;
+  h5 {
+    text-align: left;
+    font-weight: bold;
+    z-index: 1;
+    font-family: 'Montserrat', sans-serif;
+    color: #2196f3;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 15px;
   }
+  .list-container {
+    display: flex;
+    > div {
+      width: 33.3%;
+    }
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+
+    li {
+      display: inline-flex;
+      width: 100%;
+      padding-right: 20px;
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.2rem;
+      align-items: center;
+
+      svg {
+        margin-right: 10px;
+      }
+    }
+  }
+
   p {
-    width: 600px;
+    width: 800px;
     max-width: 100%;
+  }
+  .assessment-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+    > div {
+      width: 100%;
+
+      &:last-of-type {
+        width: 100%;
+        padding-left: 0px;
+        padding-top: 10px;
+      }
+    }
   }
 
   @media (max-width: $screen-sm) {
@@ -209,7 +295,15 @@
     }
   }
 }
+#strategy {
+  text-align: right;
+  padding: 100px 0 200px 0;
+  position: relative;
 
+  h2 {
+    flex-direction: row-reverse;
+  }
+}
 .philosophy ul.phil {
   list-style-type: none;
   margin-top: 40px;

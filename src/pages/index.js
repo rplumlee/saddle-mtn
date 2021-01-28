@@ -6,8 +6,10 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import HomeHero from '../components/HomeHero'
 import HomeAbout from '../components/HomeAbout'
-import HomeWWD from '../components/HomeWWD'
 import HomePhilosophy from '../components/HomePhilosophy'
+import HomeStrategy from '../components/HomeStrategy'
+import HomeScalability from '../components/HomeScalability'
+import HomeKPIs from '../components/HomeKPIs'
 import HomeMessage from '../components/HomeMessage'
 import HomeParticles from '../components/HomeParticles'
 import HomeContact from '../components/HomeContact'
@@ -32,7 +34,9 @@ class BlogIndex extends React.Component {
 
         <HomeHero />
         <HomePhilosophy />
-
+        <HomeStrategy />
+        <HomeScalability />
+        <HomeKPIs />
         <HomeAbout />
         <HomeContact />
       </Layout>

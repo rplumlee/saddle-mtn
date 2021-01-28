@@ -250,7 +250,7 @@ export default function HomeParticles({ children, location }) {
                 background: 'rgba(125,125,125,0)',
               }}
             >
-              Learn More <BsArrowDown />
+              What We Do <BsArrowDown />
             </Button>
           </AnchorLink>
         </div>

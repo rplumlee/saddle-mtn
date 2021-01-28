@@ -21,6 +21,12 @@
   .theme-bg {
     background: $color-dark-1 !important;
     transition: 200ms;
+
+    &.hover {
+      &:hover {
+        background: transparent !important;
+      }
+    }
   }
   .theme-bg-secondary {
     background: $color-dark-2 !important;
@@ -55,6 +61,11 @@
   .theme-bg {
     background: $color-light-1 !important;
     transition: 200ms;
+    &.hover {
+      &:hover {
+        background: transparent !important;
+      }
+    }
   }
   .theme-bg-secondary {
     background: $color-light-2 !important;
@@ -73,13 +84,13 @@
 // Mui
 body .PrivateTabIndicator-colorSecondary-6,
 body .MuiTabs-indicator {
-  background: $gradient;
+  background: #2196f3;
   height: 3px;
 }
 
 .MuiTab-labelIcon:hover,
 .MuiTab-labelIcon.Mui-selected {
-  background: rgba(124, 124, 124, 0.1);
+  background: rgba(124, 124, 124, 0);
 }
 
 .shape {

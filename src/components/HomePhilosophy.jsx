@@ -16,6 +16,16 @@ import Paper from '@material-ui/core/Paper'
 import Box from '@material-ui/core/Box'
 import { makeStyles } from '@material-ui/core/styles'
 import Fade from '@material-ui/core/Fade'
+import {
+  FcCollaboration,
+  FcConferenceCall,
+  FcProcess,
+  FcGenealogy,
+  FcComboChart,
+  FcAlphabeticalSortingZa,
+  FcBiotech,
+  FcAdvance,
+} from 'react-icons/fc'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -79,86 +89,111 @@ export default function HomePhilosophy() {
   const animation = useAnimation()
   const { scrollY } = useViewportScroll()
 
-  const handleChange = (event, newValue) => {
-    event.preventDefault()
-    setSelected(newValue)
-  }
-
-  React.useEffect(() => {
-    if (inView) {
-      animation.start('visible')
-    }
-  }, [animation, inView])
-
-  const onChange = React.useCallback(() => {
-    const viewportOffset = stickyRef.current.getBoundingClientRect()
-    const bodyOffset = document.body.getBoundingClientRect()
-    if (scrollY.get() >= viewportOffset.top - bodyOffset.top) {
-      setStickyNav(true)
-    }
-    if (scrollY.get() < viewportOffset.top - bodyOffset.top) {
-      setStickyNav(false)
-    }
-  }, [selected])
-
-  React.useEffect(() => {
-    scrollY.onChange(onChange)
-  }, [onChange])
-
   return (
-    <div className={`theme-bg`}>
-      <div className={`theme-bg philosophy`} id="philosophy">
-        <motion.div style={{ position: 'relative' }}>
-          <h2>What we do</h2>
-          <p
-            style={{
-              margin: '20px auto 50px auto',
-              textAlign: 'center',
-            }}
-          >
-            We specialize in the world of complex and high-tech solutions,
-            offering our own unique framework for sales excellence built on 3
-            cornerstones:
-          </p>
-          <div className="slant2 theme-bg-tertiary"></div>
-          <div className="slant theme-bg"></div>
-
-          <div ref={stickyRef}>
-            <div
-              className={
-                stickyNav ? `${classes.root} stickyN` : `${classes.root}`
-              }
+    <div className={`theme-bg-secondary`}>
+      <div className={`philosophy container`} id="philosophy">
+        <motion.div className="assessment-container">
+          <div>
+            <h2>
+              <FcAlphabeticalSortingZa />
+              Business Assessment
+            </h2>
+            <p
+              style={{
+                margin: '20px 0 50px 0',
+              }}
             >
+              We draw on 40 years of high-tech experience to provide a
+              comprehensive review of your firm’s readiness to achieve
+              next-level growth and success. We have deep expertise in all
+              aspects of Go-To-Market activities:
+            </p>
+          </div>
+
+          <div className="list-container">
+            <div>
+              <h5>Solution Readiness</h5>
+              <ul>
+                <li>
+                  <FcAdvance /> Core Value Messaging{' '}
+                </li>
+                <li>
+                  <FcAdvance /> Ideal Customer Profile
+                </li>
+                <li>
+                  <FcAdvance /> Pricing/Packaging
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h5>Marketing Strategy</h5>
+              <ul>
+                <li>
+                  <FcAdvance /> Brand Effectiveness
+                </li>
+                <li>
+                  <FcAdvance /> TAM/SAM Identification
+                </li>
+                <li>
+                  <FcAdvance /> Lead Generation
+                </li>
+                <li>
+                  <FcAdvance /> Website
+                </li>
+                <li>
+                  <FcAdvance /> Thought Leadership
+                </li>
+                <li>
+                  <FcAdvance /> Content Quality
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h5>Sales Performance</h5>
+              <ul>
+                <li>
+                  <FcAdvance /> Distribution Model
+                </li>
+                <li>
+                  <FcAdvance /> Staff Evaluation
+                </li>
+                <li>
+                  <FcAdvance /> Competitive Strategy
+                </li>
+                <li>
+                  <FcAdvance /> Presentation Effectiveness
+                </li>
+                <li>
+                  <FcAdvance /> CRM Utilization
+                </li>
+                <li>
+                  <FcAdvance /> Forecasting
+                </li>
+                <li>
+                  <FcAdvance /> Performance Measures/KPIs
+                </li>
+              </ul>
+            </div>
+            {/* <div className={`${classes.root}`}>
               <Tabs
                 centered
                 value={selected}
                 onChange={handleChange}
                 aria-label="scrollable prevent tabs example"
-                className={
-                  stickyNav
-                    ? `${classes.tabs} stickyNav theme-bg-secondary`
-                    : `${classes.tabs}`
-                }
+                className={`${classes.tabs} theme-bg-secondary`}
               >
                 <Tab
-                  label="Core Value Message"
-                  icon={
-                    <BsShieldShaded style={{ fontSize: 33, lineHeight: 55 }} />
-                  }
+                  label="Solution Readiness"
                   aria-label="phone"
                   className={`${classes.tab}`}
                 />
                 <Tab
-                  label="World Class Team"
-                  icon={
-                    <BsPeopleCircle style={{ fontSize: 33, lineHeight: 55 }} />
-                  }
+                  label="Marketing Strategy"
                   aria-label="favorite"
                   className={`${classes.tab}`}
                 />
                 <Tab
-                  label="Metrics & KPI's"
-                  icon={<FaChartPie style={{ fontSize: 33, lineHeight: 55 }} />}
+                  label="Sales Performance"
                   aria-label="person"
                   className={`${classes.tab}`}
                 />
@@ -169,9 +204,7 @@ export default function HomePhilosophy() {
                   initial={`hide`}
                   animate={selected == 0 ? 'show' : 'hide'}
                   variants={variants}
-                >
-                  <HomeMessage />
-                </motion.div>
+                ></motion.div>
               </TabPanel>
               <TabPanel value={selected} index={1}>
                 <motion.div
@@ -179,7 +212,7 @@ export default function HomePhilosophy() {
                   animate={selected == 1 ? 'show' : 'hide'}
                   variants={variants}
                 >
-                  <HomeTeam />
+                  {' '}
                 </motion.div>
               </TabPanel>
               <TabPanel value={selected} index={2}>
@@ -188,22 +221,13 @@ export default function HomePhilosophy() {
                   animate={selected == 2 ? 'show' : 'hide'}
                   variants={variants}
                 >
-                  <HomeMetrics />
+                  {' '}
                 </motion.div>
               </TabPanel>
-            </div>
+            </div>*/}
           </div>
         </motion.div>
       </div>
-
-      <svg width="0" height="0">
-        <linearGradient id="gradient" x1="100%" y1="100%" x2="0%" y2="0%">
-          <stop stopColor="rgb(218, 163, 98)" offset="0%" />
-          <stop stopColor="rgb(231, 138, 92)" offset="33%" />
-          <stop stopColor="rgb(243, 110, 86)" offset="66%" />
-          <stop stopColor="rgb(252, 72, 81)" offset="100%" />
-        </linearGradient>
-      </svg>
     </div>
   )
 }
