@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     position: 'relative',
     maxWidth: '100%',
+    paddingTop: 0,
   },
   tabs: {
     display: 'inline-flex',
@@ -107,7 +108,7 @@ export default function HomePhilosophy() {
   return (
     <div className={`theme-bg-secondary`}>
       <div className={`theme-bg-secondary philosophy`} id="philosophy">
-        <motion.div style={{ position: 'relative', minHeight: 410 }}>
+        <motion.div style={{ position: 'relative' }}>
           <h2>What we do</h2>
           <p
             style={{
@@ -168,7 +169,6 @@ export default function HomePhilosophy() {
                   initial={`hide`}
                   animate={selected == 0 ? 'show' : 'hide'}
                   variants={variants}
-                  style={{ paddingTop: 30 }}
                 >
                   <HomeMessage />
                 </motion.div>
@@ -178,7 +178,6 @@ export default function HomePhilosophy() {
                   initial={`hide`}
                   animate={selected == 1 ? 'show' : 'hide'}
                   variants={variants}
-                  style={{ paddingTop: 30 }}
                 >
                   <HomeTeam />
                 </motion.div>
@@ -188,7 +187,6 @@ export default function HomePhilosophy() {
                   initial={`hide`}
                   animate={selected == 2 ? 'show' : 'hide'}
                   variants={variants}
-                  style={{ paddingTop: 30 }}
                 >
                   <HomeMetrics />
                 </motion.div>

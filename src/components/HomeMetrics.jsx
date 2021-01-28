@@ -59,7 +59,7 @@ export default function HomeMetrics() {
   return (
     <div className={`message metrics`}>
       <motion.div className="">
-        <h2>Metrics and KPI's</h2>
+        <h3>Metrics and KPI's</h3>
         <p>
           You can’t arm &amp; aim your sales organization without having a clear
           and effective core value proposition that differentiates your solution

@@ -48,7 +48,7 @@ export default function HomeTeam() {
   return (
     <div className={`message team`}>
       <motion.div className="">
-        <h2>Building a World Class Team</h2>
+        <h3>Building a World Class Team</h3>
         <p>
           Complex solution selling is an expensive endeavor, requiring a
           commitment of resources throughout the organization. Winning sales

@@ -31,33 +31,25 @@ function Header({ colorMode, toggleColorMode, openMobile, toggleOpenMobile }) {
   return (
     <div>
       <header className="">
-        <div className="header-logo theme-text" style={{ cursor: 'default' }}>
+        <div className="header-logo " style={{ cursor: 'default' }}>
           <LogoTest />
         </div>
         <ul className="header-menu">
           <li>
             <TextBoop>
-              <AnchorLink
-                href="#philosophy"
-                offset="-100"
-                className="theme-text"
-              >
+              <AnchorLink href="#philosophy" offset="-100">
                 What we do
               </AnchorLink>
             </TextBoop>
           </li>
           <li>
             <TextBoop>
-              <AnchorLink href="#leadership" className="theme-text">
-                Leadership
-              </AnchorLink>
+              <AnchorLink href="#leadership">Leadership</AnchorLink>
             </TextBoop>
           </li>{' '}
           <li>
             <TextBoop>
-              <AnchorLink href="#contact" className="theme-text">
-                Contact
-              </AnchorLink>
+              <AnchorLink href="#contact">Contact</AnchorLink>
             </TextBoop>
           </li>
           <li>
@@ -73,9 +65,7 @@ function Header({ colorMode, toggleColorMode, openMobile, toggleOpenMobile }) {
           viewBox="0 0 100 100"
           width="50"
           className={
-            openMobile
-              ? 'ham hamRotate ham1 active theme-stroke'
-              : 'ham hamRotate ham1 theme-stroke'
+            openMobile ? 'ham hamRotate ham1 active' : 'ham hamRotate ham1'
           }
         >
           <path

@@ -47,7 +47,7 @@ export default function HomeMessage() {
   return (
     <div className={`message`}>
       <motion.div className="">
-        <h2>Optimizing Core Value Messaging</h2>
+        <h3>Optimizing Core Value Messaging</h3>
         <p>
           You can’t arm &amp; aim your sales organization without having a clear
           and effective core value proposition that differentiates your solution

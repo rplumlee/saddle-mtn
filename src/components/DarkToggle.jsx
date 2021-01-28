@@ -63,7 +63,11 @@ const l5variants = {
 
 function DarkToggle({ colorMode, toggleColorMode }) {
   return (
-    <a href="#" className={`theme-text header-icon`} onClick={toggleColorMode}>
+    <a
+      href="#"
+      className={`theme-text header-icon darkToggleContainer theme-bg`}
+      onClick={toggleColorMode}
+    >
       <motion.svg
         height="20"
         width="29"

@@ -6,6 +6,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import HomeHero from '../components/HomeHero'
 import HomeAbout from '../components/HomeAbout'
+import HomeWWD from '../components/HomeWWD'
 import HomePhilosophy from '../components/HomePhilosophy'
 import HomeMessage from '../components/HomeMessage'
 import HomeParticles from '../components/HomeParticles'
@@ -28,6 +29,7 @@ class BlogIndex extends React.Component {
       <Layout location={location}>
         <Helmet title={siteTitle} />
         <HomeParticles />
+        <HomeWWD />
         <HomePhilosophy />
         <HomeHero />
         <HomeAbout />
