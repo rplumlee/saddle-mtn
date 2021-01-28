@@ -127,7 +127,7 @@ export default function HomeHero({ children, location }) {
               </div>
             </div>
 
-            {/* <BackgroundImage
+            <BackgroundImage
               Tag="div"
               className="post-hero"
               fluid={homgePageHero}
@@ -145,7 +145,7 @@ export default function HomeHero({ children, location }) {
               }}
             >
               <div className="home-hero-overlay"></div>
-            </BackgroundImage> */}
+            </BackgroundImage>
           </>
         )
       }}
