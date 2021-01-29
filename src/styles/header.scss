@@ -117,6 +117,8 @@ header {
 #head-wrap svg:not(.active) {
   .line {
     stroke: #fff !important;
+    transition: stroke 500ms linear 400ms, stroke-dasharray 400ms,
+      stroke-dashoffset 400ms;
   }
 }
 .active .line {
