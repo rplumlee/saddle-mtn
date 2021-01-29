@@ -239,9 +239,11 @@ body {
 #kpis {
   padding-top: 70px;
   padding-bottom: 50px;
+  position: relative;
 
-  h2 {
+  h1 {
     margin-top: 30px;
+    margin-bottom: 5px;
     display: flex;
     align-items: center;
 
@@ -268,27 +270,35 @@ body {
     font-weight: bold;
     z-index: 1;
     font-family: 'Montserrat', sans-serif;
-    color: #2196f3;
     font-size: 1.1rem;
     text-transform: uppercase;
     margin-top: 0;
     margin-bottom: 15px;
+    padding: 0px 20px 5px 0px;
   }
   .list-container {
     display: flex;
+    flex-direction: column;
+    max-width: 650px;
+
     > div {
-      width: 33.3%;
     }
+  }
+  .aside {
+    margin-bottom: 40px;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    padding-bottom: 0;
   }
   ul {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 40px;
+    margin-bottom: 0;
 
     li {
       display: inline-flex;
-      width: 100%;
+      width: 42%;
       padding-right: 20px;
       font-family: 'Raleway', sans-serif;
       line-height: 1.2rem;
@@ -308,6 +318,7 @@ body {
     display: flex;
     position: relative;
     flex-direction: column;
+    max-width: 75%;
 
     > div {
       width: 100%;

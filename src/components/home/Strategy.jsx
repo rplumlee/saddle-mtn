@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion, useAnimation, useViewportScroll } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-
+import Particles from 'react-particles-js'
 import useBoop from '../../hooks/useboop'
 import { useSpring, animated } from 'react-spring'
 
@@ -66,15 +66,17 @@ export default function Strategy() {
       >
         <rect width="1600" height="360" fill="url(#linear)"></rect>
       </svg> */}
+
       <div className={`strategy container`}>
-        <motion.div className="assessment-container">
+        <motion.div
+          className="assessment-container"
+          style={{ textAlign: 'right' }}
+        >
           <div>
-            <h2>
-              Strategy Development <FcBiotech />
-            </h2>
+            <h1 style={{ justifyContent: 'flex-end' }}>Strategy Development</h1>
             <p
               style={{
-                margin: '20px 0 50px auto',
+                margin: '10px 0 50px auto',
                 width: 800,
                 maxWidth: '100%',
               }}
