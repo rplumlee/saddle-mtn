@@ -4,14 +4,14 @@ import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
-import HomeHero from '../components/HomeHero'
+import Services from '../components/home/Services'
 import HomeAbout from '../components/HomeAbout'
-import HomePhilosophy from '../components/HomePhilosophy'
-import HomeStrategy from '../components/HomeStrategy'
-import HomeScalability from '../components/HomeScalability'
-import HomeKPIs from '../components/HomeKPIs'
+import Assessment from '../components/home/Assessment'
+import Strategy from '../components/home/Strategy'
+import Scalability from '../components/home/Scalability'
+import HomeKPIs from '../components/home/KPIs'
 import HomeMessage from '../components/HomeMessage'
-import HomeParticles from '../components/HomeParticles'
+import HomeTop from '../components/home/Top'
 import HomeContact from '../components/HomeContact'
 import { rhythm } from '../utils/typography'
 import BackgroundImage from 'gatsby-background-image'
@@ -30,12 +30,12 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={location}>
         <Helmet title={siteTitle} />
-        <HomeParticles />
+        <HomeTop />
 
-        <HomeHero />
-        <HomePhilosophy />
-        <HomeStrategy />
-        <HomeScalability />
+        <Services />
+        <Assessment />
+        <Strategy />
+        <Scalability />
         <HomeKPIs />
         <HomeAbout />
         <HomeContact />

@@ -1,13 +1,10 @@
 import React from 'react'
 import { motion, useAnimation, useViewportScroll } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import HomeMessage from './HomeMessage'
-import HomeMetrics from './HomeMetrics'
-import HomeTeam from './HomeTeam'
 import { GiAtom, GiHighKick, GiChart } from 'react-icons/gi'
 import { BsPeopleCircle, BsPieChart, BsShieldShaded } from 'react-icons/bs'
 import { FaChartPie } from 'react-icons/fa'
-import useBoop from '../hooks/useboop'
+import useBoop from '../../hooks/useboop'
 import { useSpring, animated } from 'react-spring'
 import AppBar from '@material-ui/core/AppBar'
 import Tabs from '@material-ui/core/Tabs'
@@ -80,7 +77,7 @@ function TabPanel(props) {
   )
 }
 
-export default function HomePhilosophy() {
+export default function Assessment() {
   const [ref, inView, entry] = useInView({ threshold: 0.1 })
   const [selected, setSelected] = React.useState(0)
   const [stickyNav, setStickyNav] = React.useState(false)
@@ -90,8 +87,8 @@ export default function HomePhilosophy() {
   const { scrollY } = useViewportScroll()
 
   return (
-    <div className={`theme-bg-secondary`}>
-      <div className={`philosophy container`} id="philosophy">
+    <div className={`theme-bg`}>
+      <div className={`philosophy container`} id="assessment">
         <motion.div className="assessment-container">
           <div>
             <h2>

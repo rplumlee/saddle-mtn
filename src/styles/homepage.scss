@@ -1,6 +1,46 @@
 .post-hero {
   z-index: 0;
   position: relative;
+
+  .mtn-marker {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px 10px 13px;
+    border-radius: 25px;
+    overflow: hidden;
+
+    p {
+      flex: 0;
+      margin: 0 0 0 -9px;
+      padding: 0 0 0 0;
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: 400ms;
+      line-height: 30px;
+      opacity: 0;
+      transition-delay: opacity 0.4s;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      width: auto;
+      p {
+        flex: 1;
+        opacity: 1;
+      }
+    }
+
+    svg {
+      font-size: 24px;
+    }
+  }
 }
 .post-hero:after {
 }
@@ -112,6 +152,10 @@
 
       transition: 700ms;
 
+      @media (max-width: $screen-md) {
+        width: 50%;
+      }
+
       > div {
         display: flex;
         align-items: center;
@@ -189,8 +233,10 @@ body {
 }
 
 //philosophy
-#philosophy,
-#strategy {
+#assessment,
+#strategy,
+#scalability,
+#kpis {
   padding-top: 70px;
   padding-bottom: 50px;
 
@@ -281,23 +327,6 @@ body {
     p {
       padding: 0 30px;
     }
-  }
-
-  .slant {
-    -webkit-clip-path: polygon(0 320px, 100% 200px, 100% 100%, 0% 100%);
-    clip-path: polygon(0 150px, 100% 150px, 100% 100%, 0% 100%);
-    position: absolute;
-    top: 90px;
-    width: 100%;
-    height: 100%;
-  }
-  .slant2 {
-    -webkit-clip-path: polygon(0 200px, 100% 320px, 100% 100%, 0% 100%);
-    clip-path: polygon(0 200px, 100% 320px, 100% 100%, 0% 100%);
-    position: absolute;
-    top: 90px;
-    width: 100%;
-    height: 100%;
   }
 
   @media (max-width: $screen-xs) {

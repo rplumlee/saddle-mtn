@@ -6,9 +6,9 @@ import BackgroundImage from 'gatsby-background-image'
 import Image from 'gatsby-image'
 import { motion, useMotionValue, animate, useAnimation } from 'framer-motion'
 import { BsArrowDown } from 'react-icons/bs'
-import { rhythm, scale } from '../utils/typography'
+import { rhythm, scale } from '../../utils/typography'
 import Button from '@material-ui/core/Button'
-import ThemeContext from './layout'
+import ThemeContext from '../layout'
 import Particles from 'react-particles-js'
 import { GiPerson } from 'react-icons/gi'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
@@ -68,7 +68,7 @@ const ids = [
   'hack',
 ]
 
-export default function HomeParticles({ children, location }) {
+export default function HomeTop({ children, location }) {
   const [activePath, setActivePath] = React.useState('find')
 
   React.useEffect(() => {
@@ -82,7 +82,7 @@ export default function HomeParticles({ children, location }) {
   }, [])
 
   return (
-    <>
+    <div className="theme-bg">
       {' '}
       <div
         className="bg"
@@ -178,7 +178,7 @@ export default function HomeParticles({ children, location }) {
           })}
         </svg>
       </div>
-      <div className="infographic-container theme-bg">
+      <div className="infographic-container">
         <h1
           style={{
             textAlign: 'center',
@@ -236,7 +236,7 @@ export default function HomeParticles({ children, location }) {
               </svg>
             </Button>
           </AnchorLink>
-          <AnchorLink href="#servicess">
+          <AnchorLink href="#servicess" id="wwdButton">
             <Button
               href="#text-buttons"
               color="primary"
@@ -255,6 +255,6 @@ export default function HomeParticles({ children, location }) {
           </AnchorLink>
         </div>
       </div>
-    </>
+    </div>
   )
 }

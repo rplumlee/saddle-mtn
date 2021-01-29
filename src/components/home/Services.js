@@ -5,9 +5,9 @@ import { StaticQuery, graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import Image from 'gatsby-image'
 import { motion, useMotionValue, animate, useAnimation } from 'framer-motion'
-import { rhythm, scale } from '../utils/typography'
+import { rhythm, scale } from '../../utils/typography'
 import Button from '@material-ui/core/Button'
-import ThemeContext from './layout'
+import ThemeContext from '../layout'
 import { BsArrowRight } from 'react-icons/bs'
 import {
   FcCollaboration,
@@ -18,12 +18,14 @@ import {
   FcAlphabeticalSortingZa,
   FcBiotech,
 } from 'react-icons/fc'
+
+import { BiMapPin } from 'react-icons/bi'
 // Import typefaces
 import 'typeface-montserrat'
 import 'typeface-merriweather'
 import 'typeface-lato'
 
-export default function HomeHero({ children, location }) {
+export default function Services({ children, location }) {
   return (
     <StaticQuery
       query={graphql`
@@ -64,6 +66,8 @@ export default function HomeHero({ children, location }) {
         const homgePageHero =
           data.cosmicjsSettings.metadata.homepage_hero.local.childImageSharp
             .fluid
+
+        const width = useMotionValue(0)
 
         return (
           <>
@@ -134,17 +138,49 @@ export default function HomeHero({ children, location }) {
               backgroundColor={`#007ACC`}
               style={{
                 paddingBottom: 0,
-                height: '350px',
-                minHeight: 350,
+                height: '300px',
+                minHeight: 300,
                 position: 'relative',
                 display: 'flex',
                 justifyContent: 'center',
                 flexDirection: 'column',
                 maxHeight: 1000,
-                backgroundPosition: '100% 45%',
+                backgroundPosition: '70% 50%',
               }}
             >
               <div className="home-hero-overlay"></div>
+              <motion.a
+                className="mtn-marker"
+                onHoverStart={() => width.set(180)}
+                onHoverEnd={() => width.set(0)}
+                style={{ cursor: 'pointer' }}
+                href="https://en.wikipedia.org/wiki/Saddle_Mountain_State_Natural_Area"
+                target="_blank"
+                alt="Saddle Mountain State Natural Area"
+              >
+                {' '}
+                <svg
+                  viewbox="0 0 580 160"
+                  style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    right: 0,
+                    zIndex: -1,
+                    opacity: 0.8,
+                  }}
+                >
+                  <rect
+                    width="580"
+                    height="160"
+                    fill="url(#linear)"
+                    style={{ borderRadius: 5 }}
+                  ></rect>
+                </svg>
+                <BiMapPin />
+                <motion.p style={{ width, overflow: 'hidden', height: 30 }}>
+                  &nbsp;&nbsp;&nbsp;&nbsp;Saddle Mountain, OR
+                </motion.p>
+              </motion.a>
             </BackgroundImage>
           </>
         )

@@ -1,21 +1,10 @@
 import React from 'react'
 import { motion, useAnimation, useViewportScroll } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import HomeMessage from './HomeMessage'
-import HomeMetrics from './HomeMetrics'
-import HomeTeam from './HomeTeam'
-import { GiAtom, GiHighKick, GiChart } from 'react-icons/gi'
-import { BsPeopleCircle, BsPieChart, BsShieldShaded } from 'react-icons/bs'
-import { FaChartPie } from 'react-icons/fa'
-import useBoop from '../hooks/useboop'
+
+import useBoop from '../../hooks/useboop'
 import { useSpring, animated } from 'react-spring'
-import AppBar from '@material-ui/core/AppBar'
-import Tabs from '@material-ui/core/Tabs'
-import Tab from '@material-ui/core/Tab'
-import Paper from '@material-ui/core/Paper'
-import Box from '@material-ui/core/Box'
-import { makeStyles } from '@material-ui/core/styles'
-import Fade from '@material-ui/core/Fade'
+
 import {
   FcCollaboration,
   FcConferenceCall,
@@ -26,32 +15,6 @@ import {
   FcBiotech,
   FcAdvance,
 } from 'react-icons/fc'
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: 'transparent',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    position: 'relative',
-    maxWidth: '100%',
-    paddingTop: 0,
-  },
-  tabs: {
-    display: 'inline-flex',
-    margin: '0px 0 30px 0',
-    width: '100%',
-    maxWidth: '100%',
-  },
-  tab: {
-    fontWeight: '700',
-    width: '33%',
-  },
-  box: {
-    padding: 0,
-  },
-}))
 
 const variants = {
   hide: {
@@ -80,17 +43,16 @@ function TabPanel(props) {
   )
 }
 
-export default function HomeStrategy() {
+export default function HomeKPIs() {
   const [ref, inView, entry] = useInView({ threshold: 0.1 })
   const [selected, setSelected] = React.useState(0)
   const [stickyNav, setStickyNav] = React.useState(false)
   const stickyRef = React.useRef(null)
-  const classes = useStyles()
   const animation = useAnimation()
   const { scrollY } = useViewportScroll()
 
   return (
-    <div className={`theme-bg`} id="strategy" style={{ paddingBottom: 100 }}>
+    <div className={`theme-bg`} id="kpis">
       {/* <svg
         viewbox="0 0 1600 360"
         style={{
@@ -108,7 +70,7 @@ export default function HomeStrategy() {
         <motion.div className="assessment-container">
           <div>
             <h2>
-              Strategy Development <FcBiotech />
+              Performance Measurement/KPIs <FcComboChart />
             </h2>
             <p
               style={{
@@ -117,12 +79,12 @@ export default function HomeStrategy() {
                 maxWidth: '100%',
               }}
             >
-              Once areas of improvement have been identified, SMG acts as a
-              trusted advisor and sounding board to help craft a more cohesive
-              and scalable strategy for next-level growth. Building a
-              sustainable strategy involves deep dialogue and collaboration
-              between SMG and the client, always using data to inform direction.
-              Strategic services include:
+              SMG strongly subscribes the basic business tenant: “you can’t
+              manage what you can’t measure”. Establishing clear and measurable
+              performance criteria provides the validation necessary to confirm
+              the proper strategy and tactics are in place and working. SMG
+              offers a comprehensive set of reporting metrics/KPIs to give your
+              team real-time feedback on these performance areas:
             </p>
           </div>
         </motion.div>

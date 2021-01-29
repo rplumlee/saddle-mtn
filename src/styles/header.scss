@@ -80,7 +80,7 @@ header {
   top: 18px;
   width: 50px;
   height: 50px;
-  opacity: 0.7;
+  opacity: 1;
   transition: 0ms;
 
   &:hover {
@@ -110,9 +110,16 @@ header {
 .line {
   fill: none;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke: #000;
+  stroke: #fff !important;
   stroke-width: 3.5;
   stroke-linecap: round;
+}
+#head-wrap svg:not(.active) {
+  .line {
+    stroke: #fff !important;
+  }
+}
+.active .line {
 }
 .ham1 .top {
   stroke-dasharray: 40 139;
@@ -167,8 +174,9 @@ header {
     }
   }
   p {
+    border-top: 1px solid #fff;
     font-size: 0.6rem;
-    margin: 0 0 0 1px;
+    margin: 3px 0 0 1px;
     line-height: 1rem;
     letter-spacing: 0.2rem;
   }
@@ -205,13 +213,28 @@ header {
     }
   }
 }
-
-@media (min-width: 900px) {
+@media (max-width: 700px) {
   .bg {
-    margin-top: -5vw;
+    transform-origin: top left;
+    transform: scale(2);
+    margin-top: 15vw;
   }
 }
-
+@media (min-width: 1000px) {
+  .bg {
+    margin-top: calc(-4vw);
+  }
+}
+@media (min-width: 1300px) {
+  .bg {
+    margin-top: calc(-5vw);
+  }
+}
+@media (min-width: 1600px) {
+  .bg {
+    margin-top: calc(-8vw);
+  }
+}
 .darkToggleContainer {
   background: #fff;
   height: 40px;

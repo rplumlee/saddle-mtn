@@ -29,7 +29,7 @@ const TextBoop = ({ children, ...boopConfig }) => {
 
 function Header({ colorMode, toggleColorMode, openMobile, toggleOpenMobile }) {
   return (
-    <div>
+    <div id="head-wrap">
       <header className="">
         <div className="header-logo " style={{ cursor: 'default' }}>
           <LogoTest />
@@ -37,14 +37,35 @@ function Header({ colorMode, toggleColorMode, openMobile, toggleOpenMobile }) {
         <ul className="header-menu">
           <li>
             <TextBoop>
-              <AnchorLink href="#philosophy" offset="-100">
-                What we do
+              <AnchorLink href="#assessment" offset="-100">
+                Assessment
               </AnchorLink>
             </TextBoop>
           </li>
           <li>
             <TextBoop>
-              <AnchorLink href="#leadership">Leadership</AnchorLink>
+              <AnchorLink href="#strategy" offset="-100">
+                Strategy
+              </AnchorLink>
+            </TextBoop>
+          </li>
+          <li>
+            <TextBoop>
+              <AnchorLink href="#scalability" offset="-100">
+                Scalability
+              </AnchorLink>
+            </TextBoop>
+          </li>
+          <li>
+            <TextBoop>
+              <AnchorLink href="#kpis" offset="-100">
+                KPI's
+              </AnchorLink>
+            </TextBoop>
+          </li>
+          <li>
+            <TextBoop>
+              <AnchorLink href="#leadership">About</AnchorLink>
             </TextBoop>
           </li>{' '}
           <li>
@@ -65,7 +86,9 @@ function Header({ colorMode, toggleColorMode, openMobile, toggleOpenMobile }) {
           viewBox="0 0 100 100"
           width="50"
           className={
-            openMobile ? 'ham hamRotate ham1 active' : 'ham hamRotate ham1'
+            openMobile
+              ? 'ham hamRotate ham1 active theme-stroke'
+              : 'ham hamRotate ham1 theme-stroke'
           }
         >
           <path
