@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import useBoop from '../hooks/useboop'
 import DarkToggle from './DarkToggle'
 import { useSpring, animated } from 'react-spring'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const Boop = ({ children, ...boopConfig }) => {
   const [style, trigger] = useBoop({ rotation: 10 })
@@ -87,25 +88,46 @@ function MobileMenu({
     >
       <li>
         <TextBoop>
-          <a href="#philosophy" className="theme-text" onClick={handleClick}>
-            What we do
+          <a href="#assessment" className={'theme-text'} onClick={handleClick}>
+            Assessment
           </a>
         </TextBoop>
       </li>
       <li>
         <TextBoop>
-          <a href="#leadership" className="theme-text" onClick={handleClick}>
-            Leadership
+          <a href="#strategy" className={'theme-text'} onClick={handleClick}>
+            Strategy
           </a>
         </TextBoop>
       </li>
       <li>
         <TextBoop>
-          <a href="#contact" className="theme-text" onClick={handleClick}>
-            Contact
+          <a href="#scalability" className={'theme-text'} onClick={handleClick}>
+            Scalability
+          </a>
+        </TextBoop>
+      </li>
+      <li>
+        <TextBoop>
+          <a href="#kpis" className={'theme-text'} onClick={handleClick}>
+            KPI's
+          </a>
+        </TextBoop>
+      </li>
+      <li>
+        <TextBoop>
+          <a href="#leadership" className={'theme-text'} onClick={handleClick}>
+            About
           </a>
         </TextBoop>
       </li>{' '}
+      <li>
+        <TextBoop>
+          <a href="#contact" className={'theme-text'} onClick={handleClick}>
+            Contact
+          </a>
+        </TextBoop>
+      </li>
       <li style={{ transform: 'scale(1.4)' }}>
         <DarkToggle colorMode={colorMode} toggleColorMode={toggleColorMode} />
       </li>
