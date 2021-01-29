@@ -36,9 +36,10 @@ const mobileMenuVariants = {
   hide: {
     zIndex: -1,
     opacity: 0,
-    y: 15,
+    y: 0,
     transition: {
-      duration: 0.2,
+      duration: 0.4,
+      delay: 0.3,
     },
   },
 }
@@ -86,51 +87,101 @@ function MobileMenu({
       initial={'hide'}
       animate={openMobile ? 'show' : 'hide'}
     >
-      <li>
+      <motion.li
+        transition={{ delay: 0.5 }}
+        animate={
+          openMobile
+            ? { y: 0, opacity: 1, transition: { delay: 0.5 } }
+            : { y: 15, opacity: 0, transition: { delay: 0, duration: 0.4 } }
+        }
+      >
         <TextBoop>
           <a href="#assessment" className={'theme-text'} onClick={handleClick}>
             Assessment
           </a>
         </TextBoop>
-      </li>
-      <li>
+      </motion.li>
+      <motion.li
+        transition={{ delay: 0.5 }}
+        animate={
+          openMobile
+            ? { y: 0, opacity: 1, transition: { delay: 0.6 } }
+            : { y: 15, opacity: 0, transition: { delay: 0, duration: 0.4 } }
+        }
+      >
         <TextBoop>
           <a href="#strategy" className={'theme-text'} onClick={handleClick}>
             Strategy
           </a>
         </TextBoop>
-      </li>
-      <li>
+      </motion.li>
+      <motion.li
+        transition={{ delay: 0.5 }}
+        animate={
+          openMobile
+            ? { y: 0, opacity: 1, transition: { delay: 0.7 } }
+            : { y: 15, opacity: 0, transition: { delay: 0, duration: 0.4 } }
+        }
+      >
         <TextBoop>
           <a href="#scalability" className={'theme-text'} onClick={handleClick}>
             Scalability
           </a>
         </TextBoop>
-      </li>
-      <li>
+      </motion.li>
+      <motion.li
+        transition={{ delay: 0.5 }}
+        animate={
+          openMobile
+            ? { y: 0, opacity: 1, transition: { delay: 0.8 } }
+            : { y: 15, opacity: 0, transition: { delay: 0, duration: 0.4 } }
+        }
+      >
         <TextBoop>
           <a href="#kpis" className={'theme-text'} onClick={handleClick}>
             KPI's
           </a>
         </TextBoop>
-      </li>
-      <li>
+      </motion.li>
+      <motion.li
+        transition={{ delay: 0.5 }}
+        animate={
+          openMobile
+            ? { y: 0, opacity: 1, transition: { delay: 0.9 } }
+            : { y: 15, opacity: 0, transition: { delay: 0, duration: 0.4 } }
+        }
+      >
         <TextBoop>
           <a href="#leadership" className={'theme-text'} onClick={handleClick}>
             About
           </a>
         </TextBoop>
-      </li>{' '}
-      <li>
+      </motion.li>{' '}
+      <motion.li
+        transition={{ delay: 0.5 }}
+        animate={
+          openMobile
+            ? { y: 0, opacity: 1, transition: { delay: 1 } }
+            : { y: 15, opacity: 0, transition: { delay: 0, duration: 0.4 } }
+        }
+      >
         <TextBoop>
           <a href="#contact" className={'theme-text'} onClick={handleClick}>
             Contact
           </a>
         </TextBoop>
-      </li>
-      <li style={{ transform: 'scale(1.4)' }}>
+      </motion.li>
+      <motion.li
+        transition={{ delay: 0.5 }}
+        animate={
+          openMobile
+            ? { y: 0, opacity: 1, transition: { delay: 1.1 } }
+            : { y: 15, opacity: 0, transition: { delay: 0, duration: 0.4 } }
+        }
+        style={{ transform: 'scale(1.4)' }}
+      >
         <DarkToggle colorMode={colorMode} toggleColorMode={toggleColorMode} />
-      </li>
+      </motion.li>
     </motion.ul>
   )
 }

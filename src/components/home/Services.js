@@ -75,7 +75,7 @@ export default function Services({ children, location }) {
               <div className={'wwd'}>
                 <motion.ul className="" id="servicess">
                   <svg
-                    viewbox="0 0 1600 360"
+                    viewbox="0 0 1600 560"
                     style={{
                       position: 'absolute',
                       top: 0,
@@ -87,7 +87,7 @@ export default function Services({ children, location }) {
                   >
                     <rect
                       width="1600"
-                      height="360"
+                      height="560"
                       fill="url(#linear)"
                       style={{ borderRadius: 5 }}
                     ></rect>

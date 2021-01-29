@@ -82,7 +82,10 @@ export default function HomeTop({ children, location }) {
   }, [])
 
   return (
-    <div className="theme-bg">
+    <div
+      className="theme-bg"
+      style={{ overflow: 'hidden', maxWidth: '100%', position: 'relative' }}
+    >
       {' '}
       <div
         className="bg"
